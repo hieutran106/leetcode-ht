@@ -1,6 +1,5 @@
 package medium._064;
 
-import javax.swing.plaf.synth.ColorType;
 import java.util.*;
 
 
@@ -43,14 +42,15 @@ class MinimumPathSum {
         queue.add(p);
     }
 
-    public int minimumPathSum(int[][] grid) {
+    public int minPathSum(int[][] grid) {
         var m = grid.length;
         var n = grid[0].length;
 
         var visited = new int[m][n];
 
-        PriorityQueue<Point> queue = new PriorityQueue<>();
-        var start = new Point(0,0);
+        PriorityQueue<Point> queue = new PriorityQueue<>((a,b) -> a.distance - b.distance);
+        var start = new Point(0,0, grid[0][0]);
+
         addPointToQueue(start, queue, visited);
 
         while(!queue.isEmpty()) {
