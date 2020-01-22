@@ -16,6 +16,11 @@ class Point {
         this.y = y;
     }
 
+    public Point(int x, int y, int distance) {
+        this(x, y);
+        this.distance = distance;
+    }
+
     @Override
     public boolean equals(Object o) {
         Point p = (Point)o;
@@ -33,152 +38,73 @@ class Point {
 
 class MinimumPathSum {
 
-    private Point getShortest(HashSet<Point> set) {
-        Point result = null;
-        int min = Integer.MAX_VALUE;
-        for (Point p: set) {
-            if (p.distance < min) {
-                result = p;
-                min = p.distance;
-            }
-        }
-
-        return result;
-    }
-    public int minPathSum(int[][] grid) {
-        var n = grid[0].length;
-        var m = grid.length;
-        int[][] checked = new int[m][n];
-        //PriorityQueue<Point> queue = new PriorityQueue<>((a,b) -> (a.distance - b.distance));
-        HashSet<Point> queue = new HashSet<>();
-
-        var start = new Point(0, 0);
-        start.distance = grid[0][0];
-
-        queue.add(start);
-        while (!queue.isEmpty()) {
-            var point = getShortest(queue);
-
-            System.out.println(String.format("Select point [x=%d, y= %d, distance=%d], queue size = %d", point.x, point.y, point.distance, queue.size()));
-            if (point.x == m -1 && point.y == n - 1) {
-                // goal
-                return point.distance;
-            }
-
-            var adjs = getAdjacent(point, m ,n);
-
-            for (var p : adjs) {
-                if (p == null) {
-                    continue;
-                }
-                var distanceToAdjacent = point.distance + grid[p.x][p.y];
-
-                if (checked[p.x][p.y] == 1) {
-                    continue;
-                }
-
-                p.distance = distanceToAdjacent;
-                queue.add(p);
-                checked[p.x][p.y] = 1;
-            }
-        }
-        return 0;
+    private void addPointToQueue(Point p, PriorityQueue<Point> queue, int[][] visited) {
+        visited[p.x][p.y] = 1;
+        queue.add(p);
     }
 
-    public int minPathSum1(int[][] grid) {
-        var n = grid[0].length;
+    public int minimumPathSum(int[][] grid) {
         var m = grid.length;
+        var n = grid[0].length;
 
-        PriorityQueue<Point> queue = new PriorityQueue<>((a,b) -> (a.distance - b.distance));
+        var visited = new int[m][n];
 
-        var start = new Point(0, 0);
-        start.distance = grid[0][0];
+        PriorityQueue<Point> queue = new PriorityQueue<>();
+        var start = new Point(0,0);
+        addPointToQueue(start, queue, visited);
 
-        queue.add(start);
-
-        HashSet<Point> set = new HashSet<Point>();
-
-
-        while (!queue.isEmpty()) {
-            var point = queue.poll();
-            System.out.println(String.format("Select point [x=%d, y= %d, distance=%d], queue size = %d", point.x, point.y, point.distance, queue.size()));
-            if (point.x == m -1 && point.y == n - 1) {
-                // goal
-                return point.distance;
+        while(!queue.isEmpty()) {
+            Point current = queue.poll();
+            if (current.x == m-1 && current.y == n-1) {
+                // reach destination
+                return current.distance;
             }
 
-            var adjs = getAdjacent(point, m ,n);
+            // get point adjacent
+            Point[] adjacentPoints = Arrays.stream(getAdjacent(current)).filter(p ->
+                            (0 <= p.x && p.x < m) && (0 <= p.y && p.y <n)
+                    ).toArray(Point[]::new);
 
+            // loop through 2 adjacent
+            for (Point adjPoint: adjacentPoints) {
 
-            for (var p : adjs) {
-                if (p == null) {
+                int x = adjPoint.x;
+                int y = adjPoint.y;
+                if (visited[x][y] == 1) {
                     continue;
                 }
-                // check if p is in queue and update
-                boolean meet = false;
-                var distanceToAdjacent = point.distance + grid[p.x][p.y];
-                for (var qp: queue) {
-                    if (p.x == qp.x && p.y == qp.y) {
-                        // p is already in queue
-                        meet = true;
+                // not check
+                visited[x][y] = 1;
 
-                        if (distanceToAdjacent < qp.distance) {
-                            // wrong
-                            //qp.distance = point.distance + grid[p.x][p.y];
+                Point isInQueue = null;
 
-                            queue.remove(qp);
-                            p.distance = distanceToAdjacent;
-                            queue.add(p);
-                        }
+                // check point is in queue, and has shorter distance
+                var newDistance = current.distance + grid[x][y];
+                for (Point queuePoint : queue) {
+                    if (queuePoint.x == x && queuePoint.y == y && queuePoint.distance > newDistance) {
+                        isInQueue = queuePoint;
                         break;
                     }
                 }
-                // if not in
-                if (meet == false) {
-                    p.distance = distanceToAdjacent;
-                    queue.add(p);
+
+                if (isInQueue != null) {
+                    queue.remove(isInQueue);
                 }
+
+                // prepare to add into queue
+                adjPoint.distance = newDistance;
+                addPointToQueue(adjPoint, queue, visited);
             }
-
-
-
         }
 
-        return 0;
+        return 100000;
     }
 
-
-
-    private List<Point> getAdjacent1(Point p, int m, int n) {
-        var result = new ArrayList<Point>();
-        var p1 = new Point(p.x +1, p.y);
-        var p2 = new Point(p.x, p.y + 1);
-
-        if (isInBoard(p1,m,n))
-            result.add(p1);
-        if (isInBoard(p2, m,n))
-            result.add(p2);
-        return result;
-    }
-    private Point[] getAdjacent(Point p, int m, int n) {
-
-        var result = new Point[2];
-        var p1 = new Point(p.x +1, p.y);
-        var p2 = new Point(p.x, p.y + 1);
-
-        if (isInBoard(p1,m,n))
-            result[0] = p1;
-        if (isInBoard(p2, m,n))
-            result[1] = p2;
-        return result;
-    }
-
-    private boolean isInBoard(Point p, int m, int n) {
-        var x = p.x;
-        var y = p.y;
-        var xValid = 0 <= x && x <= m -1;
-        var yValid = 0 <= y && y <= n -1;
-        return xValid && yValid;
+    private Point[] getAdjacent(Point p) {
+        return new Point[] {
+                new Point(p.x +1, p.y),
+                new Point(p.x, p.y +1)
+        };
     }
 
 }
