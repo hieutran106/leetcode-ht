@@ -3,6 +3,9 @@ package medium._064;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.*;
+import java.util.Arrays;
+
 public class MinimumPathSumTests {
 
     @Test
@@ -30,7 +33,25 @@ public class MinimumPathSumTests {
     }
 
     @Test
-    public void testCase3() {
+    public void testCase3() throws FileNotFoundException, IOException {
 
+        FileInputStream fs = new FileInputStream("src/test/resources/medium_064_input.txt");
+        BufferedReader br = new BufferedReader(new InputStreamReader(fs));
+        String strLine;
+        int[][] input = new int[200][200];
+        int count = 0;
+        while ((strLine = br.readLine()) != null) {
+            var test = Arrays.stream(strLine.split(" ")).map(x -> Integer.parseInt(x)).toArray();
+            for (int i =0; i < test.length; i ++) {
+                input[count][i] = (int)test[i];
+            }
+            count ++;
+        }
+
+        fs.close();
+        var solution = new MinimumPathSum();
+        var result = solution.minPathSum(input);
+        System.out.println(result);
+        Assert.assertEquals(6, 6);
     }
 }
