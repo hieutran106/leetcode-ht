@@ -8,6 +8,9 @@ import java.util.Arrays;
 
 public class MinimumPathSumTests {
 
+    private MinimumPathSumSolution solution() {
+        return new MinimumPathSumDP();
+    }
     @Test
     public  void testCase1() {
         int[][] input = {
@@ -15,7 +18,7 @@ public class MinimumPathSumTests {
                 {1,5,1},
                 {4,2,1}
         };
-        var solution = new MinimumPathSum();
+        var solution = solution();
         var result = solution.minPathSum(input);
         Assert.assertEquals(7, result);
     }
@@ -27,7 +30,7 @@ public class MinimumPathSumTests {
                 {3,2,1},
 
         };
-        var solution = new MinimumPathSum();
+        var solution = solution();
         var result = solution.minPathSum(input);
         Assert.assertEquals(6, result);
     }
@@ -49,9 +52,9 @@ public class MinimumPathSumTests {
         }
 
         fs.close();
-        var solution = new MinimumPathSum();
+        var solution = solution();
         var result = solution.minPathSum(input);
         System.out.println(result);
-        Assert.assertEquals(6, 6);
+        Assert.assertEquals(823, result);
     }
 }

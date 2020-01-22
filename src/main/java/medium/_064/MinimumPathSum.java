@@ -35,7 +35,7 @@ class Point {
 
 
 
-class MinimumPathSum {
+class MinimumPathSum implements MinimumPathSumSolution {
 
     private void addPointToQueue(Point p, PriorityQueue<Point> queue, int[][] visited) {
         visited[p.x][p.y] = 1;
