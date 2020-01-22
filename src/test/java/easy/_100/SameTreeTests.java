@@ -56,7 +56,7 @@ public class SameTreeTests {
         TreeNode q = null;
         var solution = new SameTree();
         var result = solution.isSameTree(p, q);
-        Assert.assertEquals(false, result);
+        Assert.assertEquals(true, result);
     }
 
     @Test

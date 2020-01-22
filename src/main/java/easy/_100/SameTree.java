@@ -11,27 +11,24 @@ class TreeNode {
 
 }
 public class SameTree {
+
     public boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == null && q == null) {
-            return  true;
+            return true;
         }
-        var currentSame = isSameNode(p, q);
-        if (!currentSame) {
+        if (p!=null && q == null) {
+            return false;
+        }
+        if (p == null && q != null) {
             return false;
         }
 
-        return isSameNode(p.left, q.left) && isSameNode(p.right, q.right);
-
-
-
-    }
-    private boolean isSameNode(TreeNode  n1, TreeNode n2) {
-        if (n1 == null & n2 == null) {
-            return true;
+        boolean value = p.val == q.val;
+        if (!value) {
+            return false;
         }
-        if (n1 != null && n2 != null) {
-            return n1.val == n2.val;
-        }
-        return false;
+
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
     }
+
 }
