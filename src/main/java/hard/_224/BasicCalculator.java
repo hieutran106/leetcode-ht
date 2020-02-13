@@ -11,9 +11,9 @@ public class BasicCalculator {
         while(!s.isEmpty()) {
             int length = 1;
             if (s.charAt(0) == '(') {
-                result.add(new Token(s.substring(0, 1), TokenType.OPEN_BRACKET));
+                result.add(new Token(s.substring(0, 1), TokenType.LPARENT));
             } else if (s.charAt(0) == ')'){
-                result.add(new Token(s.substring(0, 1), TokenType.CLOSE_BRACKET));
+                result.add(new Token(s.substring(0, 1), TokenType.RPARENT));
             } else if (s.charAt(0) == '+') {
                 result.add(new Token(s.substring(0, 1), TokenType.PLUS));
             } else if (s.charAt(0) == '-') {
@@ -36,23 +36,26 @@ public class BasicCalculator {
         return result;
     }
 
-
+    public ExpressionNode parse(ArrayList<Token> tokens) throws Exception {
+        Parser parser = new Parser();
+        ExpressionNode node = parser.parse(tokens);
+        return node;
+    }
 }
-
-
 
 
 enum TokenType {
-    OPEN_BRACKET,
-    CLOSE_BRACKET,
+    LPARENT,
+    RPARENT,
     PLUS,
     MINUS,
-    NUMBER
+    NUMBER,
+    EPSILON
 }
 
 class Token {
-    String token;
-    TokenType type;
+    public String token;
+    public TokenType type;
 
 
     public Token(String token, TokenType type ) {
