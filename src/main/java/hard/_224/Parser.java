@@ -39,18 +39,19 @@ public class Parser {
         return expr;
     }
 
-    private ExpressionNode expression_prime(ExpressionNode expr) {
+    private ExpressionNode expression_prime(ExpressionNode expr) throws Exception {
         if (lookahead.type == TokenType.PLUS) {
             nextToken();
-            ExpressionNode child = expression_prime(expr);
+            ExpressionNode child = expression();
             return new PlusMinusNode(expr, child, '+');
         } else if (lookahead.type == TokenType.MINUS) {
             nextToken();
             ExpressionNode child = expression_prime(expr);
             return new PlusMinusNode(expr, child, '-');
         } else if (lookahead.type == TokenType.NUMBER)  {
-            nextToken();
             ExpressionNode child = new NumberNode(Integer.parseInt(lookahead.token));
+            nextToken();
+
             return child;
         }
 
@@ -67,8 +68,9 @@ public class Parser {
 
             return new ParenthesisNode(childExpr);
         } else if (lookahead.type == TokenType.NUMBER) {
+            NumberNode newNode = new NumberNode(Integer.parseInt(lookahead.token));
             nextToken();
-            return new NumberNode(Integer.parseInt(lookahead.token));
+            return newNode;
         } else {
             throw new Exception("Term end");
         }
