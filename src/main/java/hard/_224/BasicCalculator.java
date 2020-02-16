@@ -18,9 +18,12 @@ public class BasicCalculator {
                 result.add(new Token(s.substring(0, 1), TokenType.PLUS));
             } else if (s.charAt(0) == '-') {
                 result.add(new Token(s.substring(0, 1), TokenType.MINUS));
+            } else if (s.charAt(0) == ' ') {
+                // skip do nothin
+
             } else {
                 Pattern pattern = Pattern.compile("^([0-9]+)");
-                Matcher match = pattern.matcher(str);
+                Matcher match = pattern.matcher(s);
 
                 if (match.find()) {
                     var token = new Token(s.substring(match.start(), match.end()), TokenType.NUMBER);

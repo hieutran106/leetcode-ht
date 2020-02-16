@@ -12,7 +12,6 @@ public class Parser {
         for (int i =0; i < tokens.size(); i ++) {
             this.tokens.add(tokens.get(i));
         }
-        //this.tokens = (LinkedList<Token>) tokens.clone();
         lookahead = this.tokens.getFirst();
 
         ExpressionNode topExpr = expression();
@@ -42,17 +41,16 @@ public class Parser {
     private ExpressionNode expression_prime(ExpressionNode expr) throws Exception {
         if (lookahead.type == TokenType.PLUS) {
             nextToken();
-            ExpressionNode child = expression();
-            return new PlusMinusNode(expr, child, '+');
+            ExpressionNode x = term();
+            ExpressionNode y = expression_prime(x);
+
+            return new PlusMinusNode(expr, y, '+');
         } else if (lookahead.type == TokenType.MINUS) {
             nextToken();
-            ExpressionNode child = expression_prime(expr);
-            return new PlusMinusNode(expr, child, '-');
-        } else if (lookahead.type == TokenType.NUMBER)  {
-            ExpressionNode child = new NumberNode(Integer.parseInt(lookahead.token));
-            nextToken();
+            ExpressionNode x = term();
+            ExpressionNode y = expression_prime(x);
 
-            return child;
+            return new PlusMinusNode(expr, y, '-');
         }
 
         return expr;
@@ -74,6 +72,5 @@ public class Parser {
         } else {
             throw new Exception("Term end");
         }
-
     }
 }
