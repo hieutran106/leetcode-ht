@@ -116,4 +116,20 @@ public class BasicCalculatorTest {
             System.out.print(e);
         }
     }
+
+    @Test
+    public void testCase8() {
+        var input = "(1+(4+5+2)-3)+(6+8)";
+        BasicCalculator result = new BasicCalculator();
+
+        var x = result.tokenize(input);
+
+        try {
+            var y = result.parse(x);
+            var finalResult = y.getValue();
+            Assert.assertEquals(finalResult, 23);
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+    }
 }
