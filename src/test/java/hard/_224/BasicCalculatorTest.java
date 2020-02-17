@@ -64,7 +64,7 @@ public class BasicCalculatorTest {
         try {
             var y = result.parse(x);
             var finalResult = y.getValue();
-            Assert.assertEquals(finalResult, 1);
+            Assert.assertEquals(finalResult, -5);
         } catch (Exception e) {
             System.out.print(e);
         }
