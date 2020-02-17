@@ -79,7 +79,7 @@ public class BasicCalculatorTest {
         try {
             var y = result.parse(x);
             var finalResult = y.getValue();
-            Assert.assertEquals(finalResult, -1);
+            Assert.assertEquals(finalResult, 0);
         } catch (Exception e) {
             System.out.print(e);
         }
@@ -87,7 +87,7 @@ public class BasicCalculatorTest {
 
     @Test
     public void testCase6() {
-        var input = "10-(3-(2-1))-8";
+        var input = "10- (3 - (2-1))-8";
         BasicCalculator result = new BasicCalculator();
 
         var x = result.tokenize(input);
@@ -95,7 +95,23 @@ public class BasicCalculatorTest {
         try {
             var y = result.parse(x);
             var finalResult = y.getValue();
-            Assert.assertEquals(finalResult, 8);
+            Assert.assertEquals(finalResult, 0);
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+    }
+
+    @Test
+    public void testCase7() {
+        var input = "5 - 3 + 5";
+        BasicCalculator result = new BasicCalculator();
+
+        var x = result.tokenize(input);
+
+        try {
+            var y = result.parse(x);
+            var finalResult = y.getValue();
+            Assert.assertEquals(finalResult, 7);
         } catch (Exception e) {
             System.out.print(e);
         }

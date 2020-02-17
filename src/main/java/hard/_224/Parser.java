@@ -39,21 +39,40 @@ public class Parser {
     }
 
     private ExpressionNode expression_prime(ExpressionNode expr) throws Exception {
-        if (lookahead.type == TokenType.PLUS) {
-            nextToken();
-            ExpressionNode x = term();
-            ExpressionNode y = expression_prime(x);
+//        if (lookahead.type == TokenType.PLUS) {
+//            nextToken();
+//            ExpressionNode x = term();
+//            ExpressionNode y = expression_prime(x);
+//
+//            return new PlusMinusNode(expr, y, '+');
+//        } else if (lookahead.type == TokenType.MINUS) {
+//            nextToken();
+//            ExpressionNode x = term();
+//            ExpressionNode y = expression_prime(x);
+//
+//            return new PlusMinusNode(expr, y, '-');
+//        }
 
-            return new PlusMinusNode(expr, y, '+');
-        } else if (lookahead.type == TokenType.MINUS) {
-            nextToken();
-            ExpressionNode x = term();
-            ExpressionNode y = expression_prime(x);
+        //return expr;
 
-            return new PlusMinusNode(expr, y, '-');
+
+        ExpressionNode tLeft = expr;
+
+        if (tLeft == null) {
+            tLeft = term();
         }
 
-        return expr;
+
+
+        while(lookahead.type == TokenType.PLUS || lookahead.type == TokenType.MINUS) {
+            char op = lookahead.type == TokenType.PLUS ? '+' : '-';
+            nextToken();
+            ExpressionNode tRight = term();
+            tLeft = new PlusMinusNode(tLeft, tRight , op);
+        }
+        return tLeft;
+
+
     }
     private ExpressionNode term() throws  Exception {
         if (lookahead.type == TokenType.LPARENT) {

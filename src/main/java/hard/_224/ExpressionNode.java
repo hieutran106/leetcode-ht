@@ -52,7 +52,8 @@ class PlusMinusNode implements  ExpressionNode {
     }
 
     public int getValue() {
-        return this.op == '+' ? this.lhs.getValue() + this.rhs.getValue() :this.lhs.getValue() - this.rhs.getValue();
+        int x=  this.op == '+' ? this.lhs.getValue() + this.rhs.getValue() :this.lhs.getValue() - this.rhs.getValue();
+        return x;
     }
     public int getType() {
         return PLUSMINUS_NODE;
