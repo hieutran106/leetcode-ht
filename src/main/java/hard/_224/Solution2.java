@@ -1,6 +1,7 @@
 package hard._224;
 
 import java.util.Stack;
+import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,7 +16,7 @@ public class Solution2 {
         int index = 0;
         int sign = 1;
 
-        while (index < s.length()) {
+        while (s.length() > 0) {
             int step = 1;
             if (s.charAt(index) == '+') {
                 sign = 1;
@@ -25,6 +26,7 @@ public class Solution2 {
                 // do nothing
             } else if (s.charAt(index) == '(') {
                 stack.push(0);
+                sign = 1;
             } else  if (s.charAt(index) == ')') {
                 result = result + sign * stack.pop();
             } else {
@@ -46,7 +48,7 @@ public class Solution2 {
                     return -1;
                 }
             }
-            index += step;
+            s = s.substring(step);
         }
         return result;
     }

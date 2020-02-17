@@ -56,7 +56,7 @@ public class BasicCalculatorTest {
 
     @Test
     public void testCase4() {
-        var input = "(3+(3+3))-(6+3)";
+        var input = "(5-(3+2))-(3+2)";
         BasicCalculator result = new BasicCalculator();
 
         var x = result.tokenize(input);
@@ -64,7 +64,7 @@ public class BasicCalculatorTest {
         try {
             var y = result.parse(x);
             var finalResult = y.getValue();
-            Assert.assertEquals(finalResult, 0);
+            Assert.assertEquals(finalResult, 1);
         } catch (Exception e) {
             System.out.print(e);
         }
