@@ -41,25 +41,49 @@ public class TreeNode {
         return nodes[0];
     }
 
-    public Integer[] printTree() {
-        ArrayList<Integer> list = new ArrayList();
-        LinkedList<TreeNode> q = new LinkedList<>();
-        q.add(this);
-        while(!q.isEmpty()) {
-            TreeNode node = q.poll();
 
-            if (node != null) {
-                list.add(node.val);
-                if (node.left!=null || node.right !=null) {
-                    q.add(node.left);
-                    q.add(node.right);
-                }
+    public static int findHeight(TreeNode root) {
+        return TreeNode.dig(root, 0);
 
-            } else {
-                list.add(null);
-            }
+    }
+
+    private static int dig(TreeNode node, int height) {
+        if (node == null) {
+            return height;
         }
-        return list.toArray(new Integer[list.size()]);
+        int left = TreeNode.dig(node.left, height + 1);
+        int right = TreeNode.dig(node.right, height + 1);
+        return Math.max(left, right);
+    }
+
+    public static Integer[] printTree(TreeNode root) {
+        if (root == null) {
+            return new Integer[]{};
+        }
+
+        int height = TreeNode.findHeight(root);
+        ArrayList<TreeNode> parent = new ArrayList<TreeNode>();
+        parent.add(root);
+        ArrayList<TreeNode> children = new ArrayList<TreeNode>();
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        for (int h = 1; h <= height; h++) {
+            for (var node : parent) {
+                if (h < height) {
+                    if (node == null) {
+                        children.add(null);
+                        children.add(null);
+                    } else {
+                        children.add(node.left);
+                        children.add(node.right);
+                    }
+
+                }
+                result.add(node == null ? null : node.val);
+            }
+            parent = children;
+            children = new ArrayList<TreeNode>();
+        }
+        return result.toArray(new Integer[result.size()]);
 
     }
 
