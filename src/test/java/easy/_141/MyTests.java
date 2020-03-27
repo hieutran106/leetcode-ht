@@ -29,4 +29,5 @@ public class MyTests {
         var result = solution.hasCycle(n0);
         assertEquals(false, result);
     }
+
 }

@@ -3,8 +3,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import utils.TreeNode;
 
-import javax.swing.tree.TreeCellRenderer;
-
 public class DeleteNodeInBSTTests {
 
 
@@ -51,6 +49,33 @@ public class DeleteNodeInBSTTests {
         var result = TreeNode.printTree(updatedRoot);
         Assert.assertArrayEquals(new Integer[]{44,17,82,8,28,65,97,null,null,21,29,54,null,93,null}, result);
     }
+
+    @Test
+    public void testCase5() {
+        var input = new Integer[]{3,2, 4,1,null,null,null};
+
+        TreeNode root = TreeNode.fromArray(input);
+        Solution solution = new Solution();
+        TreeNode updatedRoot = solution.deleteNode(root, 3);
+
+        var result = TreeNode.printTree(updatedRoot);
+        Assert.assertArrayEquals(new Integer[]{2,1, 4}, result);
+    }
+
+    @Test
+    public void testCase6() {
+        var input = new Integer[] {5,3,6,2,4,null,null,1};
+        TreeNode root = TreeNode.fromArray(input);
+        Solution solution = new Solution();
+        TreeNode updatedRoot = solution.deleteNode(root, 3);
+
+        var result = TreeNode.printTree(updatedRoot);
+        Assert.assertArrayEquals(new Integer[]{5,2,6,1,4,null,null}, result);
+    }
+
+
+
+
 
 
 }

@@ -22,6 +22,8 @@ public class TreeNode {
     }
 
     public static TreeNode fromArray(Integer[] input) {
+        int height = (int)(Math.log(input.length) / Math.log(2));
+        int length = (int)Math.pow(2, height) -1;
         TreeNode[]  nodes = new TreeNode[input.length];
         for (int i = input.length -1; i >= 0; i--) {
             if (input[i] == null) {
