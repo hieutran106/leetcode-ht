@@ -15,7 +15,7 @@ public class BalancedBinaryTreeTests {
         TreeNode root = TreeNode.fromArray(input);
         var solution = new Solution();
         var result = solution.isBalanced(root);
-        Assert.assertEquals(result, true);
+        Assert.assertEquals(true, result);
     }
 
     @Test
