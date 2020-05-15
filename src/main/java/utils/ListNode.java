@@ -1,11 +1,15 @@
 package utils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ListNode {
     public int val;
     public ListNode next;
     public ListNode(int x) {
         val = x;
     }
+    public ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     public static ListNode getListFromArray(int[] arr) {
         if (arr.length ==0) {
             return null;
@@ -22,5 +26,15 @@ public class ListNode {
 
 
         return head;
+    }
+
+    public static Integer[] getArrayFromList(ListNode head) {
+        ArrayList<Integer> list = new ArrayList<>();
+        while (head != null) {
+            list.add(head.val);
+            head = head.next;
+        }
+        Integer[] result = new Integer[list.size()];
+        return list.toArray(result);
     }
 }
