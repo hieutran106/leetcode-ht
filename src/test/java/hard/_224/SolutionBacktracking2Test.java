@@ -4,7 +4,7 @@ package hard._224;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Solution2Test {
+public class SolutionBacktracking2Test {
     @Test
     public void testCase1() {
         var input = "3+2";
