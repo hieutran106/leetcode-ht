@@ -47,5 +47,6 @@ public class TwoSum2Test {
         var s= new Solution2_TwoPointer();
         var actuals = s.twoSum(input, target);
         Assert.assertArrayEquals(new int[]{2,4}, actuals);
+
     }
 }
