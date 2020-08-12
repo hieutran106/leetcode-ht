@@ -1,4 +1,4 @@
-package medium._994;
+package medium._994_rotting_oranges;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -26,5 +26,21 @@ public class RottingOrangesTest {
         var input = new int[][]{{0, 2}};
         var actual = s.orangesRotting(input);
         Assert.assertEquals(0, actual);
+    }
+
+    @Test
+    public void testCase4() {
+        var s = new Solution();
+        var input = new int[][]{{0, 2}, {2, 0}};
+        var actual = s.orangesRotting(input);
+        Assert.assertEquals(0, actual);
+    }
+
+    @Test
+    public void testCase5() {
+        var s = new Solution();
+        var input = new int[][]{{1, 0}, {0, 2}};
+        var actual = s.orangesRotting(input);
+        Assert.assertEquals(-1, actual);
     }
 }
