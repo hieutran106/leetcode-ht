@@ -51,6 +51,8 @@ public class CoinChange2Test {
     public void testCase7() {
         var s = new Solution();
         var actual = s.change(1000, new int[]{3, 5, 7, 8, 9, 10, 11});
-        Assert.assertEquals(1, actual);
+        Assert.assertEquals(1952879228, actual);
     }
+
+
 }
