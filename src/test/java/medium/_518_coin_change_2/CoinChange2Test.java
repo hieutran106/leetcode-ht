@@ -29,7 +29,28 @@ public class CoinChange2Test {
     @Test
     public void testCase4() {
         var s = new Solution();
-        var actual = s.change(3, new int[]{1, 2});
+        var actual = s.change(3, new int[]{2, 1});
         Assert.assertEquals(2, actual);
+    }
+
+    @Test
+    public void testCase5() {
+        var s = new Solution();
+        var actual = s.change(5, new int[]{});
+        Assert.assertEquals(0, actual);
+    }
+
+    @Test
+    public void testCase6() {
+        var s = new Solution();
+        var actual = s.change(0, new int[]{});
+        Assert.assertEquals(1, actual);
+    }
+
+    @Test
+    public void testCase7() {
+        var s = new Solution();
+        var actual = s.change(1000, new int[]{3, 5, 7, 8, 9, 10, 11});
+        Assert.assertEquals(1, actual);
     }
 }

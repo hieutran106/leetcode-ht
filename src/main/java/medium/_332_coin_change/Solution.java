@@ -19,7 +19,7 @@ public class Solution implements ISolution {
         if (amount < 0) {
             return -1;
         }
-        // Check the memo to avoid doble couting
+        // Check the memo to avoid double counting
         if (map.containsKey(amount)) {
             return map.get(amount);
         }
@@ -35,7 +35,6 @@ public class Solution implements ISolution {
         // note on memo
         map.put(amount, res != Integer.MAX_VALUE ? res : -1);
         return map.get(amount);
-
     }
 
 
