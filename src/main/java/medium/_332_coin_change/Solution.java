@@ -7,7 +7,7 @@ import java.util.HashMap;
  * Method: Dynamic programming
  */
 public class Solution implements ISolution {
-    public int coinChange(int[] coins, int amount) {
+    public int change(int[] coins, int amount) {
         HashMap<Integer, Integer> map = new HashMap<>();
         return dp(coins, amount, map);
     }

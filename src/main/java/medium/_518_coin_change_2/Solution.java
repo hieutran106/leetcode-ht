@@ -1,7 +1,8 @@
 package medium._518_coin_change_2;
 
-public class Solution {
-    public int change(int amount, int[] coins) {
+// DP top-down
+public class Solution implements ISolution {
+    public int change(int amount, int[] coins)  {
         if (amount == 0) {
             return 1;
         }

@@ -5,7 +5,7 @@ package medium._332_coin_change;
  */
 public class Solution2 implements ISolution {
 
-    public int coinChange(int[] coins, int amount) {
+    public int change(int[] coins, int amount) {
         int[] dp = new int[amount+1];
         for (int i =0; i < dp.length; i++) {
             dp[i] = amount + 1;
