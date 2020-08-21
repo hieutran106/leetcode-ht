@@ -1,33 +1,31 @@
 package medium._022_generate_parentheses;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+
+import java.util.*;
+
+/*
+*   Backtracking
+*
+*
+*/
 
 public class Solution {
     public List<String> generateParenthesis(int n) {
-        if (n ==0) {
-            return new ArrayList<>();
-        }
-        ArrayList<String>[] dp = new ArrayList[n+1];
-        // base case
-        dp[1] = new ArrayList<String>();
-        dp[1].add("()");
+        ArrayList<String> list = new ArrayList<>();
+        backtrack(n, n, "", list);
+        return list;
+    }
 
-        for (int i =2 ; i <=n; i++) {
-            dp[i] = new ArrayList<String>();
-            ArrayList<String> last = dp[i - 1];
-            for (String x: last) {
-                dp[i].add("("+x+")");
-                dp[i].add("()" + x);
-                dp[i].add(x + "()");
-            }
-            var index = dp[i].indexOf("()".repeat(i));
-            dp[i].remove(index);
+    private void backtrack(int l, int r, String s, List<String> list) {
+        System.out.println(s);
+        if (l > r) return; // The number of '(' should be always greater or equal the number of ')'
+        if (l ==0 && r == 0) {
+            list.add(s);
+            return;
         }
-        ArrayList<String> result = dp[n];
-        return result;
 
+        if (l > 0) backtrack(l -1, r, s + "(", list);
+        if (r > 0) backtrack(l, r -1 , s + ")", list);
     }
 
 }
