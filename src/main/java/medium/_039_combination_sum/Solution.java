@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.stream.IntStream;
 
 /* Link: https://leetcode.com/problems/combination-sum/
+*  tag: Backtracking
 * */
 public class Solution {
 

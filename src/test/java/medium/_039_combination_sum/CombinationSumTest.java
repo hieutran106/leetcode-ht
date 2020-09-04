@@ -3,12 +3,23 @@ package medium._039_combination_sum;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class CombinationSumTest {
     @Test
     public void testCase1() {
         var s = new Solution();
         var actual = s.combinationSum(new int[]{2, 3, 6, 7}, 7);
-        Assert.assertEquals(actual.size(), 2);
+
+        assertThat(actual).hasSize(2);
+        assertThat(actual).contains(Arrays.asList(3, 2, 2));
+        assertThat(actual).contains(Arrays.asList(7));
+
     }
 
     @Test
