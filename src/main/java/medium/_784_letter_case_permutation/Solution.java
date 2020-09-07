@@ -3,6 +3,9 @@ package medium._784_letter_case_permutation;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+* Backtracking
+* */
 public class Solution {
     public List<String> letterCasePermutation(String S) {
         ArrayList<String> result = new ArrayList<>();
