@@ -1,5 +1,5 @@
 import unittest
-from .solution2 import Solution2
+from easy._1342_steps_reduce_number_to_zero.solution2 import Solution2
 
 class TestSolution(unittest.TestCase):
 

@@ -1,5 +1,5 @@
 import unittest
-from .solution import Solution
+from easy._921_minimum_add_make_parentheses_valid.solution import Solution
 
 
 class TestSolution(unittest.TestCase):
