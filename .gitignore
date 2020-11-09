@@ -76,3 +76,6 @@ fabric.properties
 
 # pycache
 __pycache__/
+
+# venv
+python/venv
