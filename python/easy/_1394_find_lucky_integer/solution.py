@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def findLucky(self, arr: List[int]) -> int:
         dict = {}
@@ -10,6 +11,6 @@ class Solution:
         result = - 1
         for key, value in dict.items():
             if key == value and key > result:
-                    result = key
+                result = key
 
         return result
