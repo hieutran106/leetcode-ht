@@ -19,7 +19,7 @@ class Solution:
                 if grid[i][j] != "1":
                     continue
 
-                # start BFS
+                # start DFS
                 numIslands += 1
                 start_land = (i,j)
                 queue = [start_land]
