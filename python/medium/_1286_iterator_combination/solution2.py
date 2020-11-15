@@ -47,3 +47,12 @@ class CombinationIterator:
 
     def hasNext(self) -> bool:
         return self.has_next_item
+
+
+class DataAnalyzer:
+    train_data: int
+    test_data: int
+
+    def __init__(self, train_data: int, test_data: str):
+        self.train_data = train_data
+        self.test_data = test_data
