@@ -10,3 +10,4 @@ class Solution:
             temp = s[i]
             s[i] = s[right]
             s[right] = temp
+            
