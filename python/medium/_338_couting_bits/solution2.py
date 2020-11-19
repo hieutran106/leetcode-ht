@@ -9,11 +9,10 @@ from typing import List
 class Solution2:
     def countBits(self, num: int) -> List[int]:
         result = [0] * (num + 1)
-        for i in range(1, num+1):
-            half = i // 2
+        for i in range(1, num + 1):
             if i % 2 == 0:
-                result[i] = result[i//2]
+                result[i] = result[i // 2]
             else:
-                result[i] = result[i//2] + 1
+                result[i] = result[i // 2] + 1
 
         return result
