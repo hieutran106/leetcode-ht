@@ -16,7 +16,7 @@ Total : 97
 
 |Num|Title|Languages|Difficulty|Tags|
 | :---: | :---: | :---: | :---: | :---: |
-|020| |java|easy||
+|020|valid parentheses|python, java|easy|stack|
 |021| |java|easy||
 |100| |java|easy||
 |101| |java|easy||
