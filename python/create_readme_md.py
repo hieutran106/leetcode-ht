@@ -61,12 +61,7 @@ def groupby_orderby(dict: Dict[str, TableItem]):
 
 def write_statistic(mdFile: MdUtils, easy, medium, hard):
     total = len(easy) + len(medium) + len(hard)
-    easy_percentage = len(easy) / total * 100
-    medium_percentage = len(medium) / total * 100
-    hard_percentage = len(hard) / total * 100
     mdFile.new_header(1, 'Statistic')
-
-
 
     list_of_strings = ["Difficulty", "Num", "Percentage"]
     list_of_strings.extend(["Easy", str(len(easy)), '{:.0f}'.format(len(easy)/total * 100) + '%'])
@@ -93,7 +88,7 @@ def write_table(mdFile: MdUtils, easy, medium, hard):
     mdFile.new_table(columns=5, rows=len(result) + 1, text=list_of_strings)
 
 def scan_difficulty(path: str, difficulty: str, language: str, dict: Dict[str, TableItem]) -> Dict[str, TableItem]:
-    solutions = [f.name for f in os.scandir(path) if f.is_dir() and f.name != '__pycache__']
+    solutions = [f for f in os.scandir(path) if f.is_dir() and f.name != '__pycache__']
     for solution in solutions:
         table_item = parse_folder(solution, difficulty, language)
         id = table_item.id
@@ -106,13 +101,26 @@ def scan_difficulty(path: str, difficulty: str, language: str, dict: Dict[str, T
 
     return dict
 
-def parse_folder(name: str, difficulty: str, language: str) -> TableItem:
+def parse_folder(f, difficulty: str, language: str) -> TableItem:
+    name = f.name
     # extract id
     end = name.find('_', 1)
     id = name[1:end] if end > 0 else name[1:len(name)]
     # extract name
     title = name[end + 1: len(name)].replace('_', ' ') if end > 0 else ''
-    return TableItem(id, title, difficulty, [language], [])
+
+    # extract tag
+    tags = []
+    source_code = os.path.join(f, 'solution.py')
+    if os.path.isfile(source_code):
+        with open(source_code) as file:
+            first_line = file.readline()
+            mark = "# tags:"
+            if mark in first_line:
+                tag_str = first_line.replace(mark, "").strip()
+                tags.extend(tag_str.split(','))
+
+    return TableItem(id, title, difficulty, [language], tags)
 
 
 def create_readme():

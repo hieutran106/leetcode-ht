@@ -6,11 +6,11 @@ My leetcode solution collection
 
 |Difficulty|Num|Percentage|
 | ---: | ---: | ---: |
-|Easy|35|36%|
+|Easy|36|37%|
 |Medium|54|56%|
 |Hard|7|7%|
   
-Total : 96
+Total : 97
 # Solutions
   
 
@@ -25,12 +25,13 @@ Total : 96
 |1260|shift 2d grid|python|easy||
 |1290|convert binary linked list to integer|python|easy||
 |1342|steps reduce number to zero|python|easy||
+|1351|count neg numbers in sorted matrix|python|easy||
 |136| |java|easy||
 |1394|find lucky integer|python|easy||
 |141| |java|easy||
 |1470|shuffle the array|python|easy||
 |1475|final prices discount|python|easy||
-|1512|number good pairs|python|easy||
+|1512|number good pairs|python|easy|math|
 |1539|kth missing positive number|python|easy||
 |1572|matrix diagonal sum|python|easy||
 |167| |java|easy||
@@ -80,7 +81,7 @@ Total : 96
 |150| |java|medium||
 |1641|count sorted vowel|python|medium||
 |173| |java|medium||
-|200|number islands|python|medium||
+|200|number islands|python|medium|BFS|
 |207| |java|medium||
 |211| |java|medium||
 |213|house robber 2|java|medium||
