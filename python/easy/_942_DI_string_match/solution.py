@@ -12,17 +12,18 @@ If S[i] == "D", then A[i] > A[i+1]
 
 class Solution:
     def diStringMatch(self, S: str) -> List[int]:
-        result = [i for i in range(len(S) + 1)]
-        for i in range(len(result) - 1):
-            for j in range(i + 1, len(result)):
-                if S[i] == 'I' and result[i] < result[j]:
-                    self.swap(result, i, j)
-                elif S[i] == 'D' and result[i] > result[j]:
-                    self.swap(result, i, j)
+        i = 0
+        j = len(S)
+        ans = []
 
-        return []
+        for c in S:
+            if c == 'I':
+                ans.append(i)
+                i += 1
+            else:
+                ans.append(j)
+                j -= 1
 
-    def swap(self, array, i, j):
-        temp = array[i]
-        array[i] = array[j]
-        array[j] = temp
+        # latest element
+        ans.append(j)
+        return ans
