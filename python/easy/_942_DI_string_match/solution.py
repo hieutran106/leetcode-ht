@@ -9,7 +9,6 @@ If S[i] == "I", then A[i] < A[i+1]
 If S[i] == "D", then A[i] > A[i+1]
 '''
 
-
 class Solution:
     def diStringMatch(self, S: str) -> List[int]:
         i = 0
