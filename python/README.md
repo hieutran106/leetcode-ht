@@ -6,11 +6,11 @@ My leetcode solution collection
 
 |Difficulty|Num|Percentage|
 | ---: | ---: | ---: |
-|Easy|36|37%|
-|Medium|54|56%|
+|Easy|37|37%|
+|Medium|55|56%|
 |Hard|7|7%|
   
-Total : 97
+Total : 99
 # Solutions
   
 
@@ -29,6 +29,7 @@ Total : 97
 |136| |java|easy||
 |1394|find lucky integer|python|easy||
 |141| |java|easy||
+|1436|destination city|python|easy||
 |1470|shuffle the array|python|easy||
 |1475|final prices discount|python|easy||
 |1512|number good pairs|python|easy|math|
@@ -79,6 +80,7 @@ Total : 97
 |142| |java|medium||
 |146| |java|medium||
 |150| |java|medium||
+|1529|bulb switcher 4|python|medium||
 |1641|count sorted vowel|python|medium||
 |173| |java|medium||
 |200|number islands|python|medium|BFS|
