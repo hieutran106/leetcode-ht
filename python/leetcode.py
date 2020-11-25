@@ -2,8 +2,7 @@ import sys
 import os
 
 
-test_content = """
-import unittest
+test_content = """import unittest
 from .solution import Solution
 
 class MyTestCase(unittest.TestCase):
@@ -16,8 +15,7 @@ if __name__ == '__main__':
 
 """
 
-solution_content = """
-class Solution:
+solution_content = """class Solution:
     pass
 """
 
