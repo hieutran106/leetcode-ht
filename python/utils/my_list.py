@@ -17,3 +17,11 @@ def createListFromArray(arr: List) -> ListNode:
         last = node
         if index == 0:
             return node
+
+def createArrayFromList(head: ListNode) -> List[int]:
+    result = []
+    while head is not None:
+        result.append(head.val)
+        head = head.next
+
+    return result
