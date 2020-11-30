@@ -6,11 +6,11 @@ My leetcode solution collection
 
 |Difficulty|Num|Percentage|
 | ---: | ---: | ---: |
-|Easy|37|37%|
-|Medium|55|56%|
-|Hard|7|7%|
+|Easy|44|41%|
+|Medium|57|53%|
+|Hard|7|6%|
   
-Total : 99
+Total : 108
 # Solutions
   
 
@@ -37,18 +37,25 @@ Total : 99
 |1572|matrix diagonal sum|python|easy||
 |167| |java|easy||
 |198|house robber|java|easy||
-|206|reverse linked list|java|easy||
+|206|reverse linked list|python, java|easy||
 |234|palindrome linked list|java|easy||
+|242|valid anagram|python|easy||
 |268|missing number|java|easy||
 |344|reverse string|python|easy||
+|389|find the difference|python|easy||
 |392| |java|easy||
 |452| |java|easy||
 |538| |java|easy||
 |572| |java|easy||
 |617| |java|easy||
+|653|two sum 4|python|easy||
+|669|trim a binary search tree|python|easy|binary search tree|
+|804|unique morse code words|python|easy||
 |819|most common word|python|easy||
+|821|shortest distance to character|python|easy||
 |872| |java|easy||
 |876|middle of linked list|java|easy||
+|896|monotonic array|python|easy||
 |921|minimum add make parentheses valid|python|easy||
 |937| |java|easy||
 |942|DI string match|python|easy||
@@ -83,6 +90,7 @@ Total : 99
 |1529|bulb switcher 4|python|medium||
 |1641|count sorted vowel|python|medium||
 |173| |java|medium||
+|2|add two numbers|python|medium||
 |200|number islands|python|medium|BFS|
 |207| |java|medium||
 |211| |java|medium||
@@ -98,6 +106,7 @@ Total : 99
 |338|couting bits|python|medium||
 |347| |java|medium||
 |438| |java|medium||
+|445|add two numbers 2|python|medium||
 |450| |java|medium||
 |518|coin change 2|java|medium||
 |542| |java|medium||
