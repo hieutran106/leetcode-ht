@@ -3,6 +3,9 @@ from utils.my_list import ListNode
 
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        l1 = self.reverse_linked_list(l1)
+        l2 = self.reverse_linked_list(l2)
+
         r = 0
         prev = None
 
@@ -16,9 +19,7 @@ class Solution:
             if l2 is not None:
                 l2 = l2.next
 
-        # consider reverse the order
-        result = self.reverse_linked_list(prev)
-        return result
+        return prev
 
     def sum(self, l1: ListNode, l2: ListNode, r: int, prev: ListNode) -> (ListNode, int):
         val1 = l1.val if l1 is not None else 0
@@ -32,6 +33,7 @@ class Solution:
         new_r = val // 10
 
         return (node, new_r)
+
 
     def reverse_linked_list(self, head: ListNode) -> ListNode:
         prev = None
