@@ -1,7 +1,7 @@
 # tags: math
 
 from typing import List
-import collections
+import others
 
 '''
 Given an array of integers nums.
@@ -31,7 +31,7 @@ class Solution:
 class Solution2:
     def numIdenticalPairs(self, nums: List[int]) -> int:
         # number of occurrences for each value
-        counter = collections.Counter(nums).values()
+        counter = others.Counter(nums).values()
         # number of pairs
         pairs = [n * (n - 1) / 2 for n in counter]
         return sum(pairs)

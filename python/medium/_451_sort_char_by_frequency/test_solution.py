@@ -22,6 +22,7 @@ class MyTestCase(unittest.TestCase):
         actual = self.s.frequencySort("loveleetcode")
         self.assertEqual("eeeelloovtcd", actual)
 
+
 if __name__ == '__main__':
     unittest.main()
 
