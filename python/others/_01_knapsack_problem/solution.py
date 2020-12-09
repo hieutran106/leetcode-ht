@@ -6,7 +6,7 @@ class Solution:
         cols = capacity + 1
         dp = [[0] * cols for _ in range(rows)]
         for i in range(1, rows):
-            for c in range(cols):
+            for c in range(1, cols):
                 profit1 = dp[i - 1][c]
 
                 profit2 = 0
@@ -17,7 +17,26 @@ class Solution:
                 # compare
                 dp[i][c] = max(profit1, profit2)
 
+        self.trace_back(dp, values, weights, capacity)
         return dp[rows-1][cols-1]
+
+    def trace_back(self, dp, values, weights, capacity):
+        row = len(values)
+        col = capacity
+        # trace back to row 0
+        while row != 0:
+            # check if current item is selected
+            if dp[row][col] == dp[row - 1][col]:
+                # not select current item
+                row = row - 1
+                col = col
+            else:
+                # select current item
+                print(f"Select item {row}, weight={weights[row-1]}, value={values[row-1]}")
+                col = col - weights[row - 1]
+                row = row - 1
+
+
 
 
 class Solution3:
