@@ -62,3 +62,69 @@ class Solution3:
         profit2 = self.knapsack_recursive(values, weights, capacity, index + 1)
 
         return max(profit1, profit2)
+
+
+class Solution4:
+    '''
+    Brute force
+    '''
+    def solve(self, values: List[int], weights: List[int], capacity: int) -> int:
+        n = len(values)
+        # padding
+        values.insert(0, 0)
+        weights.insert(0, 0)
+        return self.ks(values, weights, capacity, n)
+
+    def ks(self, values, weights, c, n):
+        # base case
+        if n == 0 or c == 0:
+            return 0
+
+        # current weight larger then capacity left
+        if weights[n] > c:
+            # cannot put item in, move to next item
+            return self.ks(values, weights, c, n-1)
+        else:
+            # dont put
+            value1 = self.ks(values, weights, c, n-1)
+            # put
+            value2 = values[n] + self.ks(values, weights, c - weights[n], n -1)
+            return max(value1, value2)
+
+
+class Solution5:
+    '''
+    Memorization
+    '''
+
+    def solve(self, values: List[int], weights: List[int], capacity: int) -> int:
+        n = len(values)
+        dp = [[None] * (capacity+1) for _ in range(n+1)]
+        # padding
+        values.insert(0, 0)
+        weights.insert(0, 0)
+
+        return self.ks(values, weights, capacity, n, dp)
+
+    def ks(self, values, weights, c, n, dp):
+        if dp[n][c] is not None:
+            return dp[n][c]
+
+        result = 0
+        # base case
+        if n == 0 or c == 0:
+            result = 0
+        elif weights[n] > c:
+            result = self.ks(values, weights, c, n - 1, dp)
+        else:
+            # dont put
+            value1 = self.ks(values, weights, c, n - 1, dp)
+            # put
+            value2 = values[n] + self.ks(values, weights, c - weights[n], n - 1, dp)
+            result = max(value1, value2)
+
+        # cache
+        dp[n][c] = result
+        return result
+
+

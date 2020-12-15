@@ -1,9 +1,9 @@
 import unittest
-from .solution import Solution, Solution3
+from .solution import Solution, Solution3, Solution4, Solution5
 
 class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
-        self.s = Solution()
+        self.s = Solution5()
 
     def test_case1(self):
         values = [4, 5, 3, 7 ]
