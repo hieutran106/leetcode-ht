@@ -6,11 +6,11 @@ My leetcode solution collection
 
 |Difficulty|Num|Percentage|
 | ---: | ---: | ---: |
-|Easy|44|41%|
-|Medium|57|53%|
+|Easy|45|39%|
+|Medium|62|54%|
 |Hard|7|6%|
   
-Total : 108
+Total : 114
 # Solutions
   
 
@@ -37,6 +37,7 @@ Total : 108
 |1572|matrix diagonal sum|python|easy||
 |167| |java|easy||
 |198|house robber|java|easy||
+|204|count primes|python|easy||
 |206|reverse linked list|python, java|easy||
 |234|palindrome linked list|java|easy||
 |242|valid anagram|python|easy||
@@ -75,6 +76,7 @@ Total : 108
 |078|subsets|java|medium||
 |090|subsets 2|java|medium||
 |094| |java|medium||
+|1049|last stone weight 2|python|medium||
 |1054| |java|medium||
 |109| |java|medium||
 |113| |java|medium||
@@ -84,6 +86,7 @@ Total : 108
 |1286|iterator combination|python|medium||
 |1306|jum game 3|python|medium||
 |137| |java|medium||
+|139|word break|python|medium|dp|
 |142| |java|medium||
 |146| |java|medium||
 |150| |java|medium||
@@ -104,11 +107,14 @@ Total : 108
 |332|coin change|java|medium||
 |337|house robber 3|java|medium||
 |338|couting bits|python|medium||
+|343|integer break|python|medium|dp|
 |347| |java|medium||
 |438| |java|medium||
 |445|add two numbers 2|python|medium||
 |450| |java|medium||
-|518|coin change 2|java|medium||
+|451|sort char by frequency|python|medium||
+|474|ones and zeros|python|medium||
+|518|coin change 2|python, java|medium||
 |542| |java|medium||
 |647| |java|medium||
 |692| |java|medium||
