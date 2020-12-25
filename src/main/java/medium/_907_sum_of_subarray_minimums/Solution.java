@@ -1,6 +1,6 @@
 package medium._907_sum_of_subarray_minimums;
 
-public class Solution {
+public class Solution implements ISolution {
     public int sumSubarrayMins(int[] arr) {
         var n = arr.length;
         long sum = 0;

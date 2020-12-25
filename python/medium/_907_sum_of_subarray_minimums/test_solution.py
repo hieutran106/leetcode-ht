@@ -1,11 +1,11 @@
 import unittest
-from .solution import Solution
+from .solution import Solution, Solution2
 from os.path import abspath, join
 
 class MyTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.s = Solution()
+        self.s = Solution2()
 
     def test_case1(self):
         actual = self.s.sumSubarrayMins([3, 1, 2, 4])
@@ -35,6 +35,7 @@ class MyTestCase(unittest.TestCase):
             input = list(map(lambda x: int(x), numberStrs))
             actual = self.s.sumSubarrayMins(input)
             self.assertEqual(667452382, actual)
+
 
 
 if __name__ == '__main__':

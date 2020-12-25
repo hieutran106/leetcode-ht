@@ -21,4 +21,35 @@ class Solution:
 
             number = (left +1) * (right + 1)
             sum += arr[i] * number
-        return sum
+        return sum % M
+
+class Solution2:
+    def sumSubarrayMins(self, arr: List[int]) -> int:
+        sum = 0
+        mod = 10 ** 9 + 7
+
+        stack = []
+        left = [0] * len(arr)
+        for idx, ele in enumerate(arr):
+            while stack and arr[stack[-1]] > arr[idx]:
+                stack.pop()
+            pre_less = stack[-1] if len(stack) > 0 else -1
+            left[idx] = idx - pre_less - 1
+            stack.append(idx)
+
+        stack = []
+        right = [0] * len(arr)
+        for idx in range(len(arr))[::-1]:
+            if idx == 0:
+                print()
+            while stack and arr[stack[-1]] >= arr[idx]:
+                stack.pop()
+
+            next_less = stack[-1] if len(stack) > 0 else len(arr)
+            right[idx] = next_less - idx -1
+            stack.append(idx)
+
+        for ele, left, right in zip(arr, left, right):
+            sum += ele * (left+1) * (right + 1)
+
+        return sum % mod
