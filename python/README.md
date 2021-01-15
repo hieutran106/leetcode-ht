@@ -6,11 +6,11 @@ My leetcode solution collection
 
 |Difficulty|Num|Percentage|
 | ---: | ---: | ---: |
-|Easy|45|39%|
-|Medium|62|54%|
-|Hard|7|6%|
+|Easy|46|39%|
+|Medium|65|55%|
+|Hard|8|7%|
   
-Total : 114
+Total : 119
 # Solutions
   
 
@@ -42,6 +42,7 @@ Total : 114
 |234|palindrome linked list|java|easy||
 |242|valid anagram|python|easy||
 |268|missing number|java|easy||
+|283|move zeros|python|easy||
 |344|reverse string|python|easy||
 |389|find the difference|python|easy||
 |392| |java|easy||
@@ -114,6 +115,8 @@ Total : 114
 |450| |java|medium||
 |451|sort char by frequency|python|medium||
 |474|ones and zeros|python|medium||
+|49|group anagrams|python|medium||
+|503|next greater element 2|python|medium||
 |518|coin change 2|python, java|medium||
 |542| |java|medium||
 |647| |java|medium||
@@ -122,6 +125,7 @@ Total : 114
 |763| |java|medium||
 |767| |java|medium||
 |784|letter case permutation|java|medium||
+|907|sum of subarray minimums|python, java|medium||
 |994|rotting oranges|java|medium||
 |037|sudoku solver|java|hard||
 |051|n queens|java|hard||
@@ -130,3 +134,4 @@ Total : 114
 |072|edit distance|java|hard||
 |076|minimum window substring|java|hard||
 |224| |java|hard||
+|84|largest rectangle histogram|python|hard|monotonous stack|
