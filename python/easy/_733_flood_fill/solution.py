@@ -1,3 +1,4 @@
+# tags: dfs, bfs
 from typing import List
 
 
@@ -30,3 +31,34 @@ class Solution:
 
     def valid(self, r, c, rows, cols):
         return 0 <= r < rows and 0 <= c < cols
+
+
+class SolutionDFS:
+    def floodFill(self, image: List[List[int]], sr: int, sc: int, newColor: int) -> List[List[int]]:
+        oldColor = image[sr][sc]
+        self.dfs(image, sr, sc, oldColor, newColor)
+        return image
+
+    def dfs(self, image, r, c, oldColor, newColor):
+        rows = len(image)
+        cols = len(image[0])
+
+        # exit case
+        if not (0 <= r < rows and 0 <= c < cols):
+            return
+
+        if image[r][c] == newColor:
+            return
+
+        if image[r][c] != oldColor:
+            return
+
+        # fill
+        image[r][c] = newColor
+        self.dfs(image, r + 1, c, oldColor, newColor)
+        self.dfs(image, r - 1, c, oldColor, newColor)
+        self.dfs(image, r, c + 1, oldColor, newColor)
+        self.dfs(image, r, c - 1, oldColor, newColor)
+
+
+

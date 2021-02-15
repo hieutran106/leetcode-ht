@@ -1,10 +1,10 @@
 import unittest
-from .solution import Solution
+from .solution import Solution, SolutionDFS
 
 class MyTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.s = Solution()
+        self.s = SolutionDFS()
 
     def test_case1(self):
         image = [[1, 1, 1], [1, 1, 0], [1, 0, 1]]

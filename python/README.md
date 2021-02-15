@@ -6,11 +6,11 @@ My leetcode solution collection
 
 |Difficulty|Num|Percentage|
 | ---: | ---: | ---: |
-|Easy|46|39%|
-|Medium|65|55%|
+|Easy|47|39%|
+|Medium|66|55%|
 |Hard|8|7%|
   
-Total : 119
+Total : 121
 # Solutions
   
 
@@ -52,6 +52,7 @@ Total : 119
 |617| |java|easy||
 |653|two sum 4|python|easy||
 |669|trim a binary search tree|python|easy|binary search tree|
+|733|flood fill|python|easy|dfs,  bfs|
 |804|unique morse code words|python|easy||
 |819|most common word|python|easy||
 |821|shortest distance to character|python|easy||
@@ -79,6 +80,7 @@ Total : 119
 |094| |java|medium||
 |1049|last stone weight 2|python|medium||
 |1054| |java|medium||
+|1079|letter tile possibilities|python|medium|math,  permutation,  repetition|
 |109| |java|medium||
 |113| |java|medium||
 |114| |java|medium||
