@@ -14,10 +14,11 @@ def create_tree_from_array(input):
         if nodes[i] is None:
             continue
 
-        parent_index = (i -1) // 2
+        parent_index = (i - 1) // 2
         if i % 2 == 1:
             nodes[parent_index].left = nodes[i]
         else:
             nodes[parent_index].right = nodes[i]
 
     return nodes[0]
+
