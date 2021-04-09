@@ -22,9 +22,9 @@ class MyTestCase(unittest.TestCase):
         actual = solution("0004-03-01")
         self.assertEqual(actual, 1460)
 
-    def test_case_6(self):
-        actual = solution("abcd-03-01")
-        self.assertEqual(actual, -1)
+    def test_case_7(self):
+        actual = solution("2996-10-12")
+        self.assertEqual(actual, 2695)
 
 
 if __name__ == '__main__':
