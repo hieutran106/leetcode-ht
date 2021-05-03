@@ -6,11 +6,11 @@ My leetcode solution collection
 
 |Difficulty|Num|Percentage|
 | ---: | ---: | ---: |
-|Easy|47|39%|
-|Medium|66|55%|
-|Hard|8|7%|
+|Easy|48|38%|
+|Medium|69|55%|
+|Hard|9|7%|
   
-Total : 121
+Total : 126
 # Solutions
   
 
@@ -41,6 +41,7 @@ Total : 121
 |206|reverse linked list|python, java|easy||
 |234|palindrome linked list|java|easy||
 |242|valid anagram|python|easy||
+|257|binary tree paths|python|easy|dfs|
 |268|missing number|java|easy||
 |283|move zeros|python|easy||
 |344|reverse string|python|easy||
@@ -78,6 +79,7 @@ Total : 121
 |078|subsets|java|medium||
 |090|subsets 2|java|medium||
 |094| |java|medium||
+|1038|bst to greater sum tree|python|medium|dfs,  bst|
 |1049|last stone weight 2|python|medium||
 |1054| |java|medium||
 |1079|letter tile possibilities|python|medium|math,  permutation,  repetition|
@@ -93,6 +95,7 @@ Total : 121
 |142| |java|medium||
 |146| |java|medium||
 |150| |java|medium||
+|1514|path with maximum prob|python|medium|graph,  dijkstra|
 |1529|bulb switcher 4|python|medium||
 |1641|count sorted vowel|python|medium||
 |173| |java|medium||
@@ -128,6 +131,7 @@ Total : 121
 |767| |java|medium||
 |784|letter case permutation|java|medium||
 |907|sum of subarray minimums|python, java|medium||
+|959|regions cut by slashes|python, java|medium||
 |994|rotting oranges|java|medium||
 |037|sudoku solver|java|hard||
 |051|n queens|java|hard||
@@ -136,4 +140,5 @@ Total : 121
 |072|edit distance|java|hard||
 |076|minimum window substring|java|hard||
 |224| |java|hard||
+|297|serialize and deserialize binary tree|java|hard||
 |84|largest rectangle histogram|python|hard|monotonous stack|
