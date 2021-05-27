@@ -2,14 +2,15 @@ package hard._297_serialize_and_deserialize_binary_tree;
 
 import utils.TreeNode;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 
-
-public class Codec {
-    public String serialize(TreeNode root) {
+public class Codec2 {
+    public Integer[] serialize(TreeNode root) {
         if (root == null) {
-            return "";
+            return new Integer[]{};
         }
         ArrayList<Integer> list = new ArrayList<>();
         Queue<TreeNode> q = new LinkedList<>();
@@ -29,25 +30,14 @@ public class Codec {
         while (list.get(list.size()-1) == null) {
             list.remove(list.size()-1);
         }
-
-        String stringResult = list.stream().map(x -> x== null? "null": x.toString()).collect(Collectors.joining(","));
-        return stringResult;
+        Integer[] result = new Integer[list.size()];
+        return list.toArray(result);
     }
 
-    public TreeNode deserialize(String dataInput) {
-        if (dataInput.equals("")) {
+    public TreeNode deserialize(Integer[] data) {
+        if (data.length ==0) {
             return null;
         }
-        String[] tokens = dataInput.split(",");
-        Integer[] data = new Integer[tokens.length];
-        for (int i =0; i < tokens.length;i++) {
-            if (tokens[i].equals("null")) {
-                continue;
-            }
-            data[i] = new Integer(Integer.valueOf(tokens[i]));
-        }
-
-
         Queue<Integer> queue = new LinkedList<>(Arrays.asList(data));
         Queue<TreeNode> treeQueue = new LinkedList<>();
         TreeNode root = new TreeNode(queue.remove().intValue());
@@ -72,5 +62,3 @@ public class Codec {
         return root;
     }
 }
-
-

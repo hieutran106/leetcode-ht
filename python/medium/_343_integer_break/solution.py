@@ -15,7 +15,7 @@ which ends up being the correct answer. But another way to get this is to reuse 
 2 * (3 * 3) = 2 * max_product_of_6 = 2 * 9 = 18
 '''
 class Solution:
-    def integerBreak(self, n: int) -> int:
+    def integerBreak2(self, n: int) -> int:
         dp = [None for _ in range(n+1)]
         # base case
         dp[1] = 1
@@ -33,6 +33,7 @@ class Solution:
             dp[m] = max_product
 
         return dp[n]
+
 
 
 
