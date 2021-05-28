@@ -89,4 +89,59 @@ public class TreeNode {
 
     }
 
+
+    public static Integer[] serialize(TreeNode root) {
+        if (root == null) {
+            return new Integer[]{};
+        }
+        ArrayList<Integer> list = new ArrayList<>();
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        while (!q.isEmpty()) {
+            TreeNode currNode = q.remove();
+            if (currNode == null) {
+                list.add(null);
+            } else {
+                list.add(currNode.val);
+                q.add(currNode.left);
+                q.add(currNode.right);
+            }
+        }
+
+        // remove trailing null
+        while (list.get(list.size()-1) == null) {
+            list.remove(list.size()-1);
+        }
+        Integer[] result = new Integer[list.size()];
+        return list.toArray(result);
+    }
+
+    public static TreeNode deserialize(Integer[] data) {
+        if (data.length ==0) {
+            return null;
+        }
+        Queue<Integer> queue = new LinkedList<>(Arrays.asList(data));
+        Queue<TreeNode> treeQueue = new LinkedList<>();
+        TreeNode root = new TreeNode(queue.remove().intValue());
+
+        treeQueue.add(root);
+        while (!treeQueue.isEmpty()) {
+            TreeNode parent = treeQueue.remove();
+
+            Integer left = queue.poll();
+            if (left != null) {
+                TreeNode leftNode = new TreeNode(left.intValue());
+                parent.left = leftNode;
+                treeQueue.add(leftNode);
+            }
+            Integer right = queue.poll();
+            if (right != null) {
+                TreeNode rightNode = new TreeNode(right.intValue());
+                parent.right = rightNode;
+                treeQueue.add(rightNode);
+            }
+        }
+        return root;
+    }
+
 }
