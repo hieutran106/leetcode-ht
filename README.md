@@ -6,11 +6,11 @@ My leetcode solution collection
 
 |Difficulty|Num|Percentage|
 | ---: | ---: | ---: |
-|Easy|48|38%|
-|Medium|69|55%|
+|Easy|50|39%|
+|Medium|69|54%|
 |Hard|9|7%|
   
-Total : 126
+Total : 128
 # Solutions
   
 
@@ -39,6 +39,7 @@ Total : 126
 |198|house robber|java|easy||
 |204|count primes|python|easy||
 |206|reverse linked list|python, java|easy||
+|226|invert binary tree|python|easy||
 |234|palindrome linked list|java|easy||
 |242|valid anagram|python|easy||
 |257|binary tree paths|python|easy|dfs|
@@ -53,6 +54,7 @@ Total : 126
 |617| |java|easy||
 |653|two sum 4|python|easy||
 |669|trim a binary search tree|python|easy|binary search tree|
+|700|search in bst|python|easy||
 |733|flood fill|python|easy|dfs,  bfs|
 |804|unique morse code words|python|easy||
 |819|most common word|python|easy||
@@ -140,5 +142,5 @@ Total : 126
 |072|edit distance|java|hard||
 |076|minimum window substring|java|hard||
 |224| |java|hard||
-|297|serialize and deserialize binary tree|java|hard||
+|297|serialize and deserialize binary tree|python, java|hard||
 |84|largest rectangle histogram|python|hard|monotonous stack|
