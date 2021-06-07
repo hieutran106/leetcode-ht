@@ -6,11 +6,11 @@ My leetcode solution collection
 
 |Difficulty|Num|Percentage|
 | ---: | ---: | ---: |
-|Easy|50|39%|
-|Medium|69|54%|
+|Easy|52|40%|
+|Medium|70|53%|
 |Hard|9|7%|
   
-Total : 128
+Total : 131
 # Solutions
   
 
@@ -20,6 +20,7 @@ Total : 128
 |021| |java|easy||
 |100| |java|easy||
 |101| |java|easy||
+|108|convert sorted array to bst|python|easy||
 |110| |java|easy||
 |1146|consecutive characters|python|easy||
 |1260|shift 2d grid|python|easy||
@@ -32,6 +33,7 @@ Total : 128
 |1436|destination city|python|easy||
 |1470|shuffle the array|python|easy||
 |1475|final prices discount|python|easy||
+|1480|running sum 1d array|java|easy||
 |1512|number good pairs|python|easy|math|
 |1539|kth missing positive number|python|easy||
 |1572|matrix diagonal sum|python|easy||
@@ -39,7 +41,7 @@ Total : 128
 |198|house robber|java|easy||
 |204|count primes|python|easy||
 |206|reverse linked list|python, java|easy||
-|226|invert binary tree|python|easy||
+|226|invert binary tree|python, java|easy||
 |234|palindrome linked list|java|easy||
 |242|valid anagram|python|easy||
 |257|binary tree paths|python|easy|dfs|
@@ -81,11 +83,12 @@ Total : 128
 |078|subsets|java|medium||
 |090|subsets 2|java|medium||
 |094| |java|medium||
+|098|validate bst|java|medium||
 |1038|bst to greater sum tree|python|medium|dfs,  bst|
 |1049|last stone weight 2|python|medium||
 |1054| |java|medium||
 |1079|letter tile possibilities|python|medium|math,  permutation,  repetition|
-|109| |java|medium||
+|109|convert sorted list to bst|python, java|medium||
 |113| |java|medium||
 |114| |java|medium||
 |1143| |java|medium||
