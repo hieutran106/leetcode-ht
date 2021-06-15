@@ -5,7 +5,7 @@ from .maxheap import MaxHeap
 class MyTestCase(unittest.TestCase):
     def testCase1(self):
         input = [4, 1, 3, 2, 16, 9, 10, 14, 8, 7]
-        max_heap = MaxHeap(input)
+        max_heap = MaxHeap(data=input)
         output = max_heap.heap
         self.assertEqual(output, [16, 14, 10, 8, 7, 9, 3, 2, 4, 1])
 
@@ -41,8 +41,6 @@ class MyTestCase(unittest.TestCase):
 
     def test_shift_up(self):
         max_heap = MaxHeap()
-
-
         output = max_heap.sift_up([1], 0)
         self.assertEqual(output, [1])
 

@@ -7,8 +7,10 @@ class MaxHeap:
     and says nothing about the underlying implementation.
     A heap is a good data structure to implement a priority queue.
     """
-    def __init__(self, data = []):
+    def __init__(self, data=[], key=lambda x: x):
+        self.key = key
         self.heap = self.build_heap(data)
+
 
     def build_heap(self, data):
         """
@@ -35,10 +37,10 @@ class MaxHeap:
             largest = start
             left = 2 * start + 1
             right = 2 * start + 2
-            if heap[left] > heap[start]:
+            if self.key(heap[left]) > self.key(heap[start]):
                 largest = left
 
-            if right < len(heap) and heap[right] > heap[largest]:
+            if right < len(heap) and self.key(heap[right]) > self.key(heap[largest]):
                 largest = right
 
             if largest == start:
@@ -59,7 +61,7 @@ class MaxHeap:
         """
         while (start - 1)//2 >= 0:
             parent = (start -1)//2
-            if heap[parent] >= heap[start]:
+            if self.key(heap[parent]) >= self.key(heap[start]):
                 break
 
             # swap
@@ -75,7 +77,6 @@ class MaxHeap:
         It returns the smallest value in min heap.
         TC O(1) | SC O(1)
         """
-
         return self.heap[0]
 
     def remove(self):
@@ -86,6 +87,7 @@ class MaxHeap:
         """
         if len(self.heap) == 0:
             raise IndexError("Heap is empty")
+
         heap = self.heap
         heap[0], heap[-1] = heap[-1], heap[0]
         removed_value = heap.pop()
