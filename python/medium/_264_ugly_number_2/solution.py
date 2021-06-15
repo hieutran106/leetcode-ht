@@ -3,15 +3,13 @@ import heapq
 class Solution:
     def nthUglyNumber(self, n: int) -> int:
         # dp[i] hold ugly number i-th
-        dp = [1, 1, 2, 3, 4, 5]
+        dp = [1, 1]
 
-        # pre-generate bigger ugly number from 2th, 3th, 4th, 5th ugly number
-        heap = [6, 10, 9, 15, 8, 12, 20, 10, 15, 25]
-        heapq.heapify(heap)
+        heap = [2, 3, 5]
 
-        for i in range(6, n+1):
+        for i in range(2, n+1):
             min = heap[0]
-            while heap[0] == min:
+            while len(heap) > 0 and heap[0] == min:
                 heapq.heappop(heap)
             dp.append(min)
             heapq.heappush(heap, dp[i] * 2)
