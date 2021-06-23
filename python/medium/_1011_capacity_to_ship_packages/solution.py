@@ -3,15 +3,13 @@ from typing import List
 
 class Solution:
     def shipWithinDays(self, weights: List[int], days: int) -> int:
-
-
         left = weights[0]
-        right = sum(weights) + 1
+        right = sum(weights)
 
-        while left < right - 2:
-            mid = left + (right -left) // 2
+        while left < right:
+            mid = left + (right - left) // 2
             if self.can_shipped(weights, days, capacity=mid):
-                right = mid + 1
+                right = mid
             else:
                 left = mid + 1
 
