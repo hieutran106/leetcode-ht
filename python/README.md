@@ -6,11 +6,11 @@ My leetcode solution collection
 
 |Difficulty|Num|Percentage|
 | ---: | ---: | ---: |
-|Easy|52|40%|
-|Medium|70|53%|
-|Hard|9|7%|
+|Easy|56|39%|
+|Medium|76|53%|
+|Hard|12|8%|
   
-Total : 131
+Total : 144
 # Solutions
   
 
@@ -18,6 +18,7 @@ Total : 131
 | :---: | :---: | :---: | :---: | :---: |
 |020|valid parentheses|python, java|easy|stack|
 |021| |java|easy||
+|069|sqrt|python|easy||
 |100| |java|easy||
 |101| |java|easy||
 |108|convert sorted array to bst|python|easy||
@@ -45,9 +46,12 @@ Total : 131
 |234|palindrome linked list|java|easy||
 |242|valid anagram|python|easy||
 |257|binary tree paths|python|easy|dfs|
+|263|ugly number|python|easy||
 |268|missing number|java|easy||
+|278|first bad version|python|easy||
 |283|move zeros|python|easy||
 |344|reverse string|python|easy||
+|35|search insert position|python|easy||
 |389|find the difference|python|easy||
 |392| |java|easy||
 |452| |java|easy||
@@ -84,6 +88,7 @@ Total : 131
 |090|subsets 2|java|medium||
 |094| |java|medium||
 |098|validate bst|java|medium||
+|1011|capacity to ship packages|python|medium||
 |1038|bst to greater sum tree|python|medium|dfs,  bst|
 |1049|last stone weight 2|python|medium||
 |1054| |java|medium||
@@ -99,6 +104,7 @@ Total : 131
 |139|word break|python|medium|dp|
 |142| |java|medium||
 |146| |java|medium||
+|1482|minimum days to make bouquets|python|medium||
 |150| |java|medium||
 |1514|path with maximum prob|python|medium|graph,  dijkstra|
 |1529|bulb switcher 4|python|medium||
@@ -114,7 +120,9 @@ Total : 131
 |230| |java|medium||
 |238| |java|medium||
 |240| |java|medium||
+|264|ugly number 2|python|medium||
 |300|longest increasing subsequence|java|medium||
+|313|super ugly number|python|medium||
 |332|coin change|java|medium||
 |337|house robber 3|java|medium||
 |338|couting bits|python|medium||
@@ -135,8 +143,10 @@ Total : 131
 |763| |java|medium||
 |767| |java|medium||
 |784|letter case permutation|java|medium||
+|875|koko eating bananas|python|medium||
 |907|sum of subarray minimums|python, java|medium||
 |959|regions cut by slashes|python, java|medium||
+|973|k closest points to origin|python|medium||
 |994|rotting oranges|java|medium||
 |037|sudoku solver|java|hard||
 |051|n queens|java|hard||
@@ -146,4 +156,7 @@ Total : 131
 |076|minimum window substring|java|hard||
 |224| |java|hard||
 |297|serialize and deserialize binary tree|python, java|hard||
+|410|split array largest sum|python|hard||
+|668|kth smallest number in multiplication table|python|hard|binary search|
+|719|find kth smallest pair distance|python|hard||
 |84|largest rectangle histogram|python|hard|monotonous stack|
