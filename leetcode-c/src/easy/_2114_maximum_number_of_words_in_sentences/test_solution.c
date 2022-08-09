@@ -1,6 +1,13 @@
-#include <stdio.h>
-#include "seatest/seatest.h"
+#include "unity/unity.h"
 #include "solution.h"
+
+void setUp(void) {
+    // set stuff up here
+}
+
+void tearDown(void) {
+    // clean stuff up here
+}
 
 void test_case_1()
 {
@@ -9,7 +16,7 @@ void test_case_1()
         "i think so too",
         "this is great thanks very much"};
     int actual = mostWordsFound(input, 3);
-    assert_int_equal(6, actual);
+    TEST_ASSERT_EQUAL_INT(6, actual);
 }
 
 void test_case_2()
@@ -19,16 +26,13 @@ void test_case_2()
         "continue to fight",
         "continue to win"};
     int actual = mostWordsFound(input, 3);
-    assert_int_equal(3, actual);
+    TEST_ASSERT_EQUAL_INT(12, actual);
 }
 
-void all_tests(void)
-{
-    run_test(test_case_1);
-    run_test(test_case_2);
-}
-
-int main(int argc, char **argv)
-{
-    return run_tests(all_tests);
+// not needed when using generate_test_runner.rb
+int main(void) {
+    UNITY_BEGIN();
+    RUN_TEST(test_case_1);
+    RUN_TEST(test_case_2);
+    return UNITY_END();
 }
