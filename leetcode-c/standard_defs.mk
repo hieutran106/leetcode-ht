@@ -12,15 +12,15 @@ hello:
 	pwd
 	@echo $(OUTDIR)/$(PROBLEM_DIR)
 
-compile-unity: src/unity/unity.h src/unity/unity.c src/unity/unity_internals.h
+compile-unity: deps/Unity/src/unity.h deps/Unity/src/unity.c deps/Unity/src/unity_internals.h
 	@echo "Create Deps folder"
 	mkdir -p $(OUTDIR)/deps
 	@echo "Compile unity"
-	gcc -g -c src/unity/unity.c -o $(OUTDIR)/deps/unity.o
+	gcc -g -c deps/Unity/src/unity.c -o $(OUTDIR)/deps/unity.o
 	@echo "Copy unity header to include folder"
 	mkdir -p $(OUTDIR)/include/unity
-	cp src/unity/unity.h $(OUTDIR)/include/unity/
-	cp src/unity/unity_internals.h $(OUTDIR)/include/unity/
+	cp deps/Unity/src/unity.h $(OUTDIR)/include/unity/
+	cp deps/Unity/src/unity_internals.h $(OUTDIR)/include/unity/
 
 compile-util: src/util/tree.h src/util/tree.c
 	gcc -g -c src/util/tree.c -o $(OUTDIR)/deps/tree.o

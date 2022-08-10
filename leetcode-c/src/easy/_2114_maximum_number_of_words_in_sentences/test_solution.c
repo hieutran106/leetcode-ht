@@ -26,7 +26,7 @@ void test_case_2()
         "continue to fight",
         "continue to win"};
     int actual = mostWordsFound(input, 3);
-    TEST_ASSERT_EQUAL_INT(12, actual);
+    TEST_ASSERT_EQUAL_INT(3, actual);
 }
 
 // not needed when using generate_test_runner.rb
