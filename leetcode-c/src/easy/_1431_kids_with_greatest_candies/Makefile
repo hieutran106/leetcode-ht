@@ -1,0 +1,2 @@
+PROBLEM_DIR = easy/_1431_kids_with_greatest_candies
+include standard_defs.mk
