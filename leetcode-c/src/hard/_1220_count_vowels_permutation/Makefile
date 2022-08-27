@@ -1,0 +1,2 @@
+PROBLEM_DIR = hard/_1220_count_vowels_permutation
+include standard_defs.mk
