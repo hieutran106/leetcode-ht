@@ -17,6 +17,14 @@ class MyTestCase(unittest.TestCase):
         actual = self.s.countVowelPermutation(5)
         self.assertEqual(68, actual)
 
+    def test_case_4(self):
+        actual = self.s.countVowelPermutation(144)
+        self.assertEqual(18208803, actual)
+
+    def test_case_5(self):
+        actual = self.s.countVowelPermutation(1000)
+        self.assertEqual(89945857, actual)
+
 if __name__ == '__main__':
     unittest.main()
 
