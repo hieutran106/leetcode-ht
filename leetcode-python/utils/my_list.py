@@ -6,6 +6,9 @@ class ListNode:
         self.val = val
         self.next = next
 
+    def __str__(self):
+        return f"ListNode({self.val=}, {self.next=}"
+
 
 def createListFromArray(arr: List) -> ListNode:
     if (len(arr) == 0):

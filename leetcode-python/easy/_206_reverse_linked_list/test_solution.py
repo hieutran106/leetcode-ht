@@ -19,6 +19,12 @@ class MyTestCase(unittest.TestCase):
         actual_array = createArrayFromList(actual)
         self.assertEqual([1], actual_array)
 
+    def test_case3(self):
+        root = createListFromArray([1, 2])
+        actual = self.s.reverseList(root)
+        actual_array = createArrayFromList(actual)
+        self.assertEqual([2, 1], actual_array)
+
 if __name__ == '__main__':
     unittest.main()
 
