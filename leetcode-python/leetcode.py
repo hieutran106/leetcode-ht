@@ -8,7 +8,7 @@ from .solution import Solution
 class MyTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.s = Solution()    
+        self.s = Solution()
 
 if __name__ == '__main__':
     unittest.main()
@@ -35,6 +35,10 @@ if __name__ == "__main__":
     os.mkdir(path)
     # create __init__.py
     file = os.path.join(path, '__init__.py')
+    open(file, 'a').close()
+
+    # create README.md
+    file = os.path.join(path, 'README.md')
     open(file, 'a').close()
 
     # create solution.py
