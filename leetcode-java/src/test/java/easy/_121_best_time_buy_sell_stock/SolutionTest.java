@@ -16,7 +16,7 @@ public class SolutionTest {
                 dp[i] = prices[i] - min_price;
 
             }
-            return Arrays.stream(dp).max().getAsInt();
+            let damage = weapon.damage * d20();
         }
     }
 
