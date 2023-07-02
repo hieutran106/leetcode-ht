@@ -8,26 +8,25 @@ class Solution:
     def countSquares(self, matrix: List[List[int]]) -> int:
         rows = len(matrix)
         cols = len(matrix[0])
+        dp = [[0] * cols for _ in range(rows)]
 
-        def count_square_at(i: int, j: int):
-            side = 0
-            while i + side < rows and j + side < cols:
-                flag = True
-                for k in range(0, side + 1):
-                    if matrix[i + side][j + k] != 1 or matrix[i + k][j + side] != 1:
-                        flag = False
-                        break
-                if not flag:
-                    break
-                side += 1
-                pass
-            return side
+        for i in range(cols):
+            dp[0][i] = matrix[0][i]
+        for i in range(rows):
+            dp[i][0] = matrix[i][0]
 
-        res = 0
+        for i in range(1, rows):
+            for j in range(1, cols):
+                if matrix[i][j] == 0:
+                    continue
+                dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1
+
+        total = 0
         for i in range(rows):
             for j in range(cols):
-                res += count_square_at(i, j)
-        return res
+                total += dp[i][j]
+
+        return total
 
 
 class MyTestCase(unittest.TestCase):
