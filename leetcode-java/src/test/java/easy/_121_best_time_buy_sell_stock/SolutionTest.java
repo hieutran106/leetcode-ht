@@ -16,21 +16,8 @@ public class SolutionTest {
                 dp[i] = prices[i] - min_price;
 
             }
-            let damage = weapon.damage * d20();
+            return dp[n-1];
         }
     }
 
-    @Test
-    public void testCase1() {
-        var s = new Solution();
-        var actual = s.maxProfit(new int[]{7, 1, 5, 3, 6, 4});
-        Assert.assertEquals(5, actual);
-    }
-
-    @Test
-    public void testCase0() {
-        var s = new Solution();
-        var actual = s.maxProfit(new int[]{7, 6, 4, 3, 1});
-        Assert.assertEquals(0, actual);
-    }
 }

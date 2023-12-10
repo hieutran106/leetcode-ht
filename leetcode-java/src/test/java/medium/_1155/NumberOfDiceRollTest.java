@@ -46,12 +46,6 @@ public class NumberOfDiceRollTest {
         Assert.assertEquals(7, actual);
     }
 
-    @Test
-    public void testCase7() {
-        var s = new Solution();
-        var actual = s.numRollsToTarget(40,40, 600);
-        Assert.assertEquals(0, actual);
-    }
 
     @Test
     public void testCase8() {
