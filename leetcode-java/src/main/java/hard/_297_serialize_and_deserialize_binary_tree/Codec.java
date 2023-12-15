@@ -44,7 +44,7 @@ public class Codec {
             if (tokens[i].equals("null")) {
                 continue;
             }
-            data[i] = new Integer(Integer.valueOf(tokens[i]));
+            data[i] = Integer.valueOf(tokens[i]);
         }
 
 
