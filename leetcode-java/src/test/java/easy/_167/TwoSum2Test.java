@@ -1,7 +1,7 @@
 package easy._167;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import org.junit.jupiter.api.Test;
 
 public class TwoSum2Test {
     @Test
@@ -10,7 +10,7 @@ public class TwoSum2Test {
         int target = 9;
         var s= new Solution();
         var actuals = s.twoSum(input, target);
-        Assert.assertArrayEquals(new int[]{1,2}, actuals);
+        assertArrayEquals(new int[]{1,2}, actuals);
     }
 
     @Test
@@ -19,7 +19,7 @@ public class TwoSum2Test {
         int target = 18;
         var s= new Solution();
         var actuals = s.twoSum(input, target);
-        Assert.assertArrayEquals(new int[]{2,9}, actuals);
+        assertArrayEquals(new int[]{2,9}, actuals);
     }
 
     @Test
@@ -28,7 +28,7 @@ public class TwoSum2Test {
         int target = 8;
         var s= new Solution();
         var actuals = s.twoSum(input, target);
-        Assert.assertArrayEquals(new int[]{2,4}, actuals);
+        assertArrayEquals(new int[]{2,4}, actuals);
     }
 
     @Test
@@ -37,7 +37,7 @@ public class TwoSum2Test {
         int target = 18;
         var s= new Solution2_TwoPointer();
         var actuals = s.twoSum(input, target);
-        Assert.assertArrayEquals(new int[]{2,9}, actuals);
+        assertArrayEquals(new int[]{2,9}, actuals);
     }
 
     @Test
@@ -46,7 +46,7 @@ public class TwoSum2Test {
         int target = 8;
         var s= new Solution2_TwoPointer();
         var actuals = s.twoSum(input, target);
-        Assert.assertArrayEquals(new int[]{2,4}, actuals);
+        assertArrayEquals(new int[]{2,4}, actuals);
 
     }
 }

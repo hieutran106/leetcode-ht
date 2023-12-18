@@ -1,6 +1,8 @@
 package easy._1287_element_appearing_more_than_25_percent;
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 public class SolutionTest {
     public static class Solution {
@@ -28,28 +30,28 @@ public class SolutionTest {
     public void testCase1() {
         var s = new Solution();
         int actual = s.findSpecialInteger(new int[]{1,2,2,6,6,6,6,7,10});
-        Assert.assertEquals(actual, 6);
+        assertEquals(actual, 6);
     }
 
     @Test
     public void testCase2() {
         var s = new Solution();
         int actual = s.findSpecialInteger(new int[]{1,1});
-        Assert.assertEquals(actual, 1);
+        assertEquals(actual, 1);
     }
 
     @Test
     public void testCase3() {
         var s = new Solution();
         int actual = s.findSpecialInteger(new int[]{2});
-        Assert.assertEquals(actual, 2);
+        assertEquals(actual, 2);
     }
 
     @Test
     public void testCase4() {
         var s = new Solution();
         int actual = s.findSpecialInteger(new int[]{0});
-        Assert.assertEquals(actual, 0);
+        assertEquals(actual, 0);
     }
 
 }

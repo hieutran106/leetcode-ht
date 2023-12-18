@@ -1,10 +1,10 @@
 package medium._959_regions_cut_by_slashes;
 
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class RegionsCutBySlashesTest {
 
@@ -13,7 +13,7 @@ public class RegionsCutBySlashesTest {
         var s = new Solution();
         var input = new String[]{" /", "/ "};
         var actual = s.regionsBySlashes(input);
-        Assert.assertEquals(2, actual);
+        assertEquals(2, actual);
     }
 
     @Test
@@ -21,7 +21,7 @@ public class RegionsCutBySlashesTest {
         var s = new Solution();
         var input = new String[]{"\\\\", " \\"};
         var actual = s.regionsBySlashes(input);
-        Assert.assertEquals(3, actual);
+        assertEquals(3, actual);
     }
 
     @Test
@@ -29,7 +29,7 @@ public class RegionsCutBySlashesTest {
         var s = new Solution();
         var input = new String[]{"\\\\", "\\\\"};
         var actual = s.regionsBySlashes(input);
-        Assert.assertEquals(4, actual);
+        assertEquals(4, actual);
     }
 
     @Test
@@ -37,7 +37,7 @@ public class RegionsCutBySlashesTest {
         var s = new Solution();
         var input = new String[]{"//", "/ "};
         var actual = s.regionsBySlashes(input);
-        Assert.assertEquals(3, actual);
+        assertEquals(3, actual);
     }
 
     @Test
@@ -45,6 +45,6 @@ public class RegionsCutBySlashesTest {
         var s = new Solution();
         var input = new String[]{"/\\", "\\/"};
         var actual = s.regionsBySlashes(input);
-        Assert.assertEquals(5, actual);
+        assertEquals(5, actual);
     }
 }

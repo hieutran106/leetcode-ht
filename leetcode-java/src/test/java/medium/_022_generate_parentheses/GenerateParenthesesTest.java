@@ -1,7 +1,9 @@
 package medium._022_generate_parentheses;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -18,7 +20,7 @@ public class GenerateParenthesesTest {
                 "()(())",
                 "()()()");
 
-        Assert.assertEquals(new HashSet<>(actual), new HashSet<>(expect));
+        assertEquals(new HashSet<>(actual), new HashSet<>(expect));
     }
 
     @Test
@@ -27,7 +29,7 @@ public class GenerateParenthesesTest {
         var actual = s.generateParenthesis(2);
         var expect = Arrays.asList( "()()", "(())");
 
-        Assert.assertEquals(new HashSet<>(actual), new HashSet<>(expect));
+        assertEquals(new HashSet<>(actual), new HashSet<>(expect));
     }
 
     @Test
@@ -37,6 +39,6 @@ public class GenerateParenthesesTest {
         Collections.sort(actual);
         var expect = Arrays.asList( "(((())))","((()()))","((())())","((()))()","(()(()))","(()()())","(()())()","(())(())","(())()()","()((()))","()(()())","()(())()","()()(())","()()()()");
         Collections.sort(expect);
-        Assert.assertEquals(new HashSet<>(expect), new HashSet<>(actual));
+        assertEquals(new HashSet<>(expect), new HashSet<>(actual));
     }
 }

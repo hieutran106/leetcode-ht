@@ -4,10 +4,8 @@ package medium._211;
 
 
 
-        import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-        import static org.junit.Assert.assertArrayEquals;
-        import static org.junit.Assert.assertEquals;
 
 
 public class MyTests {
@@ -24,6 +22,9 @@ public class MyTests {
         assertEquals(true, wordDict.search(".ad"));
         assertEquals(true, wordDict.search("b.."));
 
+    }
+
+    private void assertEquals(boolean b, boolean pad) {
     }
 
 

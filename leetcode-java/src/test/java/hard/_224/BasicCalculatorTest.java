@@ -1,8 +1,10 @@
 package hard._224;
 
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 public class BasicCalculatorTest {
     @Test
@@ -15,7 +17,7 @@ public class BasicCalculatorTest {
         try {
             var y = result.parse(x);
             var finalResult = y.getValue();
-            Assert.assertEquals(finalResult, 5);
+            assertEquals(finalResult, 5);
         } catch (Exception e) {
             System.out.print(e);
         }
@@ -32,7 +34,7 @@ public class BasicCalculatorTest {
         try {
             var y = result.parse(x);
             var finalResult = y.getValue();
-            Assert.assertEquals(finalResult, 10);
+            assertEquals(finalResult, 10);
         } catch (Exception e) {
             System.out.print(e);
         }
@@ -48,7 +50,7 @@ public class BasicCalculatorTest {
         try {
             var y = result.parse(x);
             var finalResult = y.getValue();
-            Assert.assertEquals(finalResult, 0);
+            assertEquals(finalResult, 0);
         } catch (Exception e) {
             System.out.print(e);
         }
@@ -64,7 +66,7 @@ public class BasicCalculatorTest {
         try {
             var y = result.parse(x);
             var finalResult = y.getValue();
-            Assert.assertEquals(finalResult, -5);
+            assertEquals(finalResult, -5);
         } catch (Exception e) {
             System.out.print(e);
         }
@@ -79,7 +81,7 @@ public class BasicCalculatorTest {
         try {
             var y = result.parse(x);
             var finalResult = y.getValue();
-            Assert.assertEquals(finalResult, 0);
+            assertEquals(finalResult, 0);
         } catch (Exception e) {
             System.out.print(e);
         }
@@ -95,7 +97,7 @@ public class BasicCalculatorTest {
         try {
             var y = result.parse(x);
             var finalResult = y.getValue();
-            Assert.assertEquals(finalResult, 0);
+            assertEquals(finalResult, 0);
         } catch (Exception e) {
             System.out.print(e);
         }
@@ -111,7 +113,7 @@ public class BasicCalculatorTest {
         try {
             var y = result.parse(x);
             var finalResult = y.getValue();
-            Assert.assertEquals(finalResult, 7);
+            assertEquals(finalResult, 7);
         } catch (Exception e) {
             System.out.print(e);
         }
@@ -127,7 +129,7 @@ public class BasicCalculatorTest {
         try {
             var y = result.parse(x);
             var finalResult = y.getValue();
-            Assert.assertEquals(finalResult, 23);
+            assertEquals(finalResult, 23);
         } catch (Exception e) {
             System.out.print(e);
         }

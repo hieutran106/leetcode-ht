@@ -1,7 +1,7 @@
 package medium._056;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import org.junit.jupiter.api.Test;
 
 public class MergeIntervalsTest {
     @Test
@@ -9,7 +9,7 @@ public class MergeIntervalsTest {
         int[][] input = new int[][]{{1,3}, {2,6}, {8,10}, {15, 18}};
         var s= new Solution();
         var result = s.merge(input);
-        Assert.assertArrayEquals(new int[][]{{1,6}, {8,10}, {15,18}}, result);
+        assertArrayEquals(new int[][]{{1,6}, {8,10}, {15,18}}, result);
     }
 
     @Test
@@ -17,7 +17,7 @@ public class MergeIntervalsTest {
         int[][] input = new int[][]{{1,4}, {4,5}};
         var s= new Solution();
         var result = s.merge(input);
-        Assert.assertArrayEquals(new int[][]{{1, 5}}, result);
+        assertArrayEquals(new int[][]{{1, 5}}, result);
     }
 
     @Test
@@ -25,7 +25,7 @@ public class MergeIntervalsTest {
         int[][] input = new int[][]{{1,4}};
         var s= new Solution();
         var result = s.merge(input);
-        Assert.assertArrayEquals(new int[][]{{1, 4}}, result);
+        assertArrayEquals(new int[][]{{1, 4}}, result);
     }
 
     @Test
@@ -33,7 +33,7 @@ public class MergeIntervalsTest {
         int[][] input = new int[][]{{1,4}, {0, 4}};
         var s= new Solution();
         var result = s.merge(input);
-        Assert.assertArrayEquals(new int[][]{{0, 4}}, result);
+        assertArrayEquals(new int[][]{{0, 4}}, result);
     }
 
     @Test
@@ -41,6 +41,6 @@ public class MergeIntervalsTest {
         int[][] input = new int[][]{{1,4}, {2, 3}};
         var s= new Solution();
         var result = s.merge(input);
-        Assert.assertArrayEquals(new int[][]{{1, 4}}, result);
+        assertArrayEquals(new int[][]{{1, 4}}, result);
     }
 }

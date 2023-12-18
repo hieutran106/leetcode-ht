@@ -1,9 +1,6 @@
 package easy._121_best_time_buy_sell_stock;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-import java.util.Arrays;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class SolutionTest {
     public static class Solution {

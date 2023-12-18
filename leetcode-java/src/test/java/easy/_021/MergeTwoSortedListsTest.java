@@ -1,7 +1,7 @@
 package easy._021;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import org.junit.jupiter.api.Test;
 import utils.ListNode;
 
 public class MergeTwoSortedListsTest {
@@ -11,7 +11,7 @@ public class MergeTwoSortedListsTest {
         ListNode l2 = ListNode.getListFromArray(new int[]{1, 3, 4});
         var result = new Solution().mergeTwoLists(l1, l2);
         Integer[] array = ListNode.getArrayFromList(result);
-        Assert.assertArrayEquals(new Integer[] {1, 1, 2, 3, 4, 4}, array);
+        assertArrayEquals(new Integer[] {1, 1, 2, 3, 4, 4}, array);
     }
 
     @Test
@@ -20,6 +20,6 @@ public class MergeTwoSortedListsTest {
         ListNode l2 = null;
         var result = new Solution().mergeTwoLists(l1, l2);
         Integer[] array = ListNode.getArrayFromList(result);
-        Assert.assertArrayEquals(new Integer[] {1, 2, 4}, array);
+        assertArrayEquals(new Integer[] {1, 2, 4}, array);
     }
 }

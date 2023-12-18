@@ -1,8 +1,9 @@
 package easy._100;
 
-import com.sun.source.tree.Tree;
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 public class SameTreeTests {
     @Test
@@ -17,7 +18,7 @@ public class SameTreeTests {
         q.right = new TreeNode(3);
         var solution = new SameTree();
         var result = solution.isSameTree(p, q);
-        Assert.assertEquals(true, result);
+        assertEquals(true, result);
     }
 
     @Test
@@ -31,7 +32,7 @@ public class SameTreeTests {
 
         var solution = new SameTree();
         var result = solution.isSameTree(p, q);
-        Assert.assertEquals(false, result);
+        assertEquals(false, result);
 
     }
 
@@ -47,7 +48,7 @@ public class SameTreeTests {
         q.right = new TreeNode(2);
         var solution = new SameTree();
         var result = solution.isSameTree(p, q);
-        Assert.assertEquals(false, result);
+        assertEquals(false, result);
     }
     @Test
     public void testCase4() {
@@ -56,7 +57,7 @@ public class SameTreeTests {
         TreeNode q = null;
         var solution = new SameTree();
         var result = solution.isSameTree(p, q);
-        Assert.assertEquals(true, result);
+        assertEquals(true, result);
     }
 
     @Test
@@ -75,6 +76,6 @@ public class SameTreeTests {
 
         var solution = new SameTree();
         var result = solution.isSameTree(p, q);
-        Assert.assertEquals(false, result);
+        assertEquals(false, result);
     }
 }

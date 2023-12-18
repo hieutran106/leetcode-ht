@@ -1,7 +1,9 @@
 package medium._114;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 import utils.TreeNode;
 
 public class FlattenBinaryTreeTest {
@@ -16,6 +18,6 @@ public class FlattenBinaryTreeTest {
             System.out.println(x.val);
             x = x.right;
         }
-        Assert.assertEquals(true, true);
+        assertEquals(true, true);
     }
 }

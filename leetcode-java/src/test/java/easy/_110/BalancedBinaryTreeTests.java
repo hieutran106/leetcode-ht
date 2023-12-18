@@ -1,11 +1,9 @@
 package easy._110;
 
-import org.junit.Assert;
-import org.junit.Test;
-import utils.TreeNode;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+import utils.TreeNode;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BalancedBinaryTreeTests {
     @Test
@@ -15,7 +13,7 @@ public class BalancedBinaryTreeTests {
         TreeNode root = TreeNode.fromArray(input);
         var solution = new Solution();
         var result = solution.isBalanced(root);
-        Assert.assertEquals(true, result);
+        assertEquals(true, result);
     }
 
     @Test
@@ -24,7 +22,7 @@ public class BalancedBinaryTreeTests {
         TreeNode root = TreeNode.fromArray(input);
         var solution = new Solution();
         var result = solution.isBalanced(root);
-        Assert.assertEquals(result, false);
+        assertEquals(result, false);
     }
 
     @Test
@@ -33,6 +31,6 @@ public class BalancedBinaryTreeTests {
         TreeNode root = TreeNode.fromArray(input);
         var solution = new Solution2();
         var result = solution.isBalanced(root);
-        Assert.assertEquals(result, false);
+        assertEquals(result, false);
     }
 }

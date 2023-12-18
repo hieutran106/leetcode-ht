@@ -1,7 +1,7 @@
 package medium._438;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import org.junit.jupiter.api.Test;
 
 public class FindAllAnagramsTest {
     @Test
@@ -9,7 +9,7 @@ public class FindAllAnagramsTest {
         var s = new Solution();
         var result = s.findAnagrams("cbaebabacd", "abc");
         int[] array = result.stream().mapToInt(i -> i).toArray();
-        Assert.assertArrayEquals(new int[]{0, 6}, array);
+        assertArrayEquals(new int[]{0, 6}, array);
     }
 
     @Test
@@ -17,6 +17,6 @@ public class FindAllAnagramsTest {
         var s = new Solution();
         var result = s.findAnagrams("abab", "ab");
         int[] array = result.stream().mapToInt(i -> i).toArray();
-        Assert.assertArrayEquals(new int[]{0,1, 2}, array);
+        assertArrayEquals(new int[]{0,1, 2}, array);
     }
 }

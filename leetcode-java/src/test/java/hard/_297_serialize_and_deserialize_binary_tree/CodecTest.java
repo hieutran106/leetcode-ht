@@ -1,7 +1,9 @@
 package hard._297_serialize_and_deserialize_binary_tree;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 import utils.TreeNode;
 
 import java.util.Arrays;
@@ -14,7 +16,7 @@ public class CodecTest {
         TreeNode root = TreeNode.fromArray(new Integer[]{1, 2, 3});
         var codec = new Codec2();
         Integer[] data = codec.serialize(root);
-        Assert.assertArrayEquals(data, new Integer[]{1, 2, 3});
+        assertArrayEquals(data, new Integer[]{1, 2, 3});
     }
 
     @Test
@@ -22,7 +24,7 @@ public class CodecTest {
         TreeNode root = TreeNode.fromArray(new Integer[]{1, null, 3});
         var codec = new Codec2();
         Integer[] data = codec.serialize(root);
-        Assert.assertArrayEquals(data, new Integer[]{1, null, 3});
+        assertArrayEquals(data, new Integer[]{1, null, 3});
     }
 
     @Test
@@ -30,7 +32,7 @@ public class CodecTest {
         var codec = new Codec2();
         TreeNode root = codec.deserialize(new Integer[]{1, null, 2});
         Integer[] serialized_tree = codec.serialize(root);
-        Assert.assertArrayEquals(serialized_tree, new Integer[]{1, null, 2});
+        assertArrayEquals(serialized_tree, new Integer[]{1, null, 2});
 
     }
 
@@ -44,7 +46,7 @@ public class CodecTest {
         var codec = new Codec2();
         Integer[] serialized_tree = codec.serialize(root);
         System.out.println(Arrays.toString(serialized_tree));
-        Assert.assertArrayEquals(serialized_tree, new Integer[]{1, 2, 3, null, null, 4, 5});
+        assertArrayEquals(serialized_tree, new Integer[]{1, 2, 3, null, null, 4, 5});
 
     }
 
@@ -52,9 +54,9 @@ public class CodecTest {
     public void testCase5() {
         var codec = new Codec2();
         TreeNode root = codec.deserialize(new Integer[]{1, null, 2, 3, null, null, 5});
-        Assert.assertEquals(root.val, 1);
-        Assert.assertEquals(root.right.left.val, 3);
-        Assert.assertEquals(root.right.left.right.val, 5);
+        assertEquals(root.val, 1);
+        assertEquals(root.right.left.val, 3);
+        assertEquals(root.right.left.right.val, 5);
 
     }
 
@@ -64,7 +66,7 @@ public class CodecTest {
         Integer[] input = new Integer[]{1, 2, 3};
         TreeNode root = codec.deserialize(input);
         Integer[] data = codec.serialize(root);
-        Assert.assertArrayEquals(data, input);
+        assertArrayEquals(data, input);
     }
 
     @Test
@@ -73,7 +75,7 @@ public class CodecTest {
         Integer[] input = new Integer[]{};
         TreeNode root = codec.deserialize(input);
         Integer[] data = codec.serialize(root);
-        Assert.assertArrayEquals(data, input);
+        assertArrayEquals(data, input);
     }
     @Test
     public void testCase8() {
@@ -81,7 +83,7 @@ public class CodecTest {
         Integer[] input = new Integer[]{1,2,3,4, null, 5, 6, 7};
         TreeNode root = codec.deserialize(input);
         Integer[] data = codec.serialize(root);
-        Assert.assertArrayEquals(data, input);
+        assertArrayEquals(data, input);
     }
 
 
@@ -91,7 +93,7 @@ public class CodecTest {
         String input = "";
         TreeNode root = codec.deserialize(input);
         String data = codec.serialize(root);
-        Assert.assertEquals(data, input);
+        assertEquals(data, input);
     }
 
     @Test
@@ -100,7 +102,7 @@ public class CodecTest {
         String input = "1,2";
         TreeNode root = codec.deserialize(input);
         String data = codec.serialize(root);
-        Assert.assertEquals(data, input);
+        assertEquals(data, input);
     }
 
 

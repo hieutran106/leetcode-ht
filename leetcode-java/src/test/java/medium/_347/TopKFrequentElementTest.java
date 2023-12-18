@@ -1,7 +1,7 @@
 package medium._347;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import org.junit.jupiter.api.Test;
 
 public class TopKFrequentElementTest {
     @Test
@@ -9,7 +9,7 @@ public class TopKFrequentElementTest {
         var input = new int[] {1,1,1,2,2,3};
         var s = new Solution();
         var actual = s.topKFrequent(input, 2);
-        Assert.assertArrayEquals(new int[]{1,2}, actual);
+        assertArrayEquals(new int[]{1,2}, actual);
     }
 
     @Test
@@ -17,6 +17,6 @@ public class TopKFrequentElementTest {
         var input = new int[] {1,1,1};
         var s = new Solution();
         var actual = s.topKFrequent(input, 1);
-        Assert.assertArrayEquals(new int[]{1}, actual);
+        assertArrayEquals(new int[]{1}, actual);
     }
 }

@@ -1,14 +1,12 @@
 package medium._039_combination_sum;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import org.junit.jupiter.api.Test;
 
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CombinationSumTest {
     @Test
@@ -26,13 +24,13 @@ public class CombinationSumTest {
     public void testCase2() {
         var s = new Solution();
         var actual = s.combinationSum(new int[]{2, 3, 5}, 8);
-        Assert.assertEquals(actual.size(), 3);
+        assertEquals(actual.size(), 3);
     }
 
     @Test
     public void testCase3() {
         var s = new Solution();
         var actual = s.combinationSum(new int[]{8}, 6);
-        Assert.assertEquals(actual.size(), 0);
+        assertEquals(actual.size(), 0);
     }
 }

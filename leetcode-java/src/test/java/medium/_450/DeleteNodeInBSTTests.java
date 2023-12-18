@@ -1,6 +1,6 @@
 package medium._450;
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import org.junit.jupiter.api.Test;
 import utils.TreeNode;
 
 public class DeleteNodeInBSTTests {
@@ -12,7 +12,7 @@ public class DeleteNodeInBSTTests {
         Solution solution = new Solution();
         TreeNode updatedRoot = solution.deleteNode(root, 3);
         var result = updatedRoot.printTree(updatedRoot);
-        Assert.assertArrayEquals(new Integer[] {5,2,6,null,4,null,7}, result);
+        assertArrayEquals(new Integer[] {5,2,6,null,4,null,7}, result);
 
     }
 
@@ -22,7 +22,7 @@ public class DeleteNodeInBSTTests {
         Solution solution = new Solution();
         TreeNode updatedRoot = solution.deleteNode(root, 0);
         var result = updatedRoot.printTree(updatedRoot);
-        Assert.assertArrayEquals(new Integer[]{5,3,6,2,4,null,7}, result );
+        assertArrayEquals(new Integer[]{5,3,6,2,4,null,7}, result );
 
     }
 
@@ -36,7 +36,7 @@ public class DeleteNodeInBSTTests {
         Solution solution = new Solution();
         TreeNode updatedRoot = solution.deleteNode(root, 1);
         var result = TreeNode.printTree(updatedRoot);
-        Assert.assertArrayEquals(new Integer[]{2}, result);
+        assertArrayEquals(new Integer[]{2}, result);
     }
     @Test
     public void testCase4() {
@@ -47,7 +47,7 @@ public class DeleteNodeInBSTTests {
         TreeNode updatedRoot = solution.deleteNode(root, 88);
 
         var result = TreeNode.printTree(updatedRoot);
-        Assert.assertArrayEquals(new Integer[]{44,17,82,8,28,65,97,null,null,21,29,54,null,93,null}, result);
+        assertArrayEquals(new Integer[]{44,17,82,8,28,65,97,null,null,21,29,54,null,93,null}, result);
     }
 
     @Test
@@ -59,7 +59,7 @@ public class DeleteNodeInBSTTests {
         TreeNode updatedRoot = solution.deleteNode(root, 3);
 
         var result = TreeNode.printTree(updatedRoot);
-        Assert.assertArrayEquals(new Integer[]{2,1, 4}, result);
+        assertArrayEquals(new Integer[]{2,1, 4}, result);
     }
 
     @Test
@@ -70,7 +70,7 @@ public class DeleteNodeInBSTTests {
         TreeNode updatedRoot = solution.deleteNode(root, 3);
 
         var result = TreeNode.printTree(updatedRoot);
-        Assert.assertArrayEquals(new Integer[]{5,2,6,1,4,null,null}, result);
+        assertArrayEquals(new Integer[]{5,2,6,1,4,null,null}, result);
     }
 
 

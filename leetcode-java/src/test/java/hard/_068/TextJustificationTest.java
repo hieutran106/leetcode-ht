@@ -1,7 +1,8 @@
 package hard._068;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,7 +16,7 @@ public class TextJustificationTest {
         var result = s.fullJustify(input, 16);
 
         List<String> expected = Arrays.asList("This    is    an", "example  of text", "justification.  ");
-        Assert.assertEquals(result, expected);
+        assertEquals(result, expected);
     }
 
     @Test
@@ -25,7 +26,7 @@ public class TextJustificationTest {
         var result = s.fullJustify(input, 16);
 
         List<String> expected = Arrays.asList("What   must   be", "acknowledgment  ", "shall be        ");
-        Assert.assertEquals(result, expected);
+        assertEquals(result, expected);
     }
 
     @Test
@@ -37,7 +38,7 @@ public class TextJustificationTest {
 
         List<String> expected = Arrays.asList("Science  is  what we", "understand      well", "enough to explain to",
         "a  computer.  Art is", "everything  else  we", "do                  ");
-        Assert.assertEquals(result, expected);
+        assertEquals(result, expected);
     }
 
     @Test
@@ -47,6 +48,6 @@ public class TextJustificationTest {
         var result = s.fullJustify(input, 4);
 
         List<String> expected = Arrays.asList("a   ", "aaaa", "b  c", "aaaa", "b c ");
-        Assert.assertEquals(result, expected);
+        assertEquals(result, expected);
     }
 }

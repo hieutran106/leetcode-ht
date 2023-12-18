@@ -1,9 +1,8 @@
 package easy._020;
 
-import org.junit.Assert;
-import org.junit.Test;
-
+import org.junit.jupiter.api.Test;
 import java.util.HashMap;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ValidParenthesesTest {
     @Test
@@ -15,7 +14,7 @@ public class ValidParenthesesTest {
         map.put("(]", false);
         map.forEach((k,v) -> {
             var result = solution.isValid(k);
-            Assert.assertEquals(v, result);
+            assertEquals(v, result);
         });
     }
 
@@ -23,13 +22,13 @@ public class ValidParenthesesTest {
     public void testCase2() {
         var solution = new ValidParentheses();
         var result = solution.isValid("]");
-        Assert.assertEquals(false, result);
+        assertEquals(false, result);
     }
 
     @Test
     public void testCase3() {
         var solution = new ValidParentheses();
         var result = solution.isValid("(])");
-        Assert.assertEquals(false, result);
+        assertEquals(false, result);
     }
 }

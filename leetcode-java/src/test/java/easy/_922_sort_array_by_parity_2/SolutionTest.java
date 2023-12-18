@@ -1,11 +1,9 @@
 package easy._922_sort_array_by_parity_2;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import static org.junit.Assert.*;
 
 public class SolutionTest {
 
@@ -15,7 +13,7 @@ public class SolutionTest {
         int[] input = new int[]{2, 3};
         int[] output = s.sortArrayByParityII(input);
         boolean pass = satisfy(output);
-        Assert.assertTrue(pass);
+        assertTrue(pass);
     }
 
     @Test
@@ -24,7 +22,7 @@ public class SolutionTest {
         int[] input = new int[]{4, 2, 5, 7};
         int[] output = s.sortArrayByParityII(input);
         boolean pass = satisfy(output);
-        Assert.assertTrue( pass );
+        assertTrue( pass );
     }
 
     @Test
@@ -33,7 +31,7 @@ public class SolutionTest {
         int[] input = new int[]{3, 4};
         int[] output = s.sortArrayByParityII(input);
         boolean pass = satisfy(output);
-        Assert.assertTrue(pass);
+        assertTrue(pass);
     }
 
     @Test
@@ -42,7 +40,7 @@ public class SolutionTest {
         int[] input = new int[]{3, 3, 4, 4, 4, 3};
         int[] output = s.sortArrayByParityII(input);
         boolean pass = satisfy(output);
-        Assert.assertTrue(pass);
+        assertTrue(pass);
     }
 
     @Test
@@ -51,7 +49,7 @@ public class SolutionTest {
         int[] input = new int[]{2,3,1,1,4,0,0,4,3,3};
         int[] output = s.sortArrayByParityII(input);
         boolean pass = satisfy(output);
-        Assert.assertTrue(pass);
+        assertTrue(pass);
     }
 
     public boolean satisfy(int[] nums) {

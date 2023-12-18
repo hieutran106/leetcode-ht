@@ -1,7 +1,7 @@
 package medium._1054;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
@@ -11,7 +11,7 @@ public class DistantBarcodesTest {
         var input = new int[]{1,1,1,2,2,2};
         var s = new Solution();
         var actuals = s.rearrangeBarcodes(input);
-        Assert.assertArrayEquals(actuals, new int[]{1,2,1,2,1,2});
+        assertArrayEquals(actuals, new int[]{1,2,1,2,1,2});
     }
 
     @Test
@@ -20,6 +20,6 @@ public class DistantBarcodesTest {
         var s = new Solution();
         var actuals = s.rearrangeBarcodes(input);
         System.out.println(Arrays.toString(actuals));
-        Assert.assertArrayEquals(actuals, new int[]{1, 3, 1, 3, 1, 2, 1, 2});
+        assertArrayEquals(actuals, new int[]{1, 3, 1, 3, 1, 2, 1, 2});
     }
 }

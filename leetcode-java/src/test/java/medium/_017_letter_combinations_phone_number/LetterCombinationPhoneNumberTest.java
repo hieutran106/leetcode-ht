@@ -1,10 +1,6 @@
 package medium._017_letter_combinations_phone_number;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.HashSet;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class LetterCombinationPhoneNumberTest {
 

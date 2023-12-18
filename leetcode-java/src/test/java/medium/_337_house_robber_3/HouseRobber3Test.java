@@ -1,9 +1,9 @@
 package medium._337_house_robber_3;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import utils.TreeNode;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class HouseRobber3Test {
 

@@ -1,7 +1,8 @@
 package medium._064;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 import java.io.*;
 import java.util.Arrays;
@@ -20,7 +21,7 @@ public class MinimumPathSumTests {
         };
         var solution = solution();
         var result = solution.minPathSum(input);
-        Assert.assertEquals(7, result);
+        assertEquals(7, result);
     }
 
     @Test
@@ -32,7 +33,7 @@ public class MinimumPathSumTests {
         };
         var solution = solution();
         var result = solution.minPathSum(input);
-        Assert.assertEquals(6, result);
+        assertEquals(6, result);
     }
 
     @Test
@@ -55,6 +56,6 @@ public class MinimumPathSumTests {
         var solution = solution();
         var result = solution.minPathSum(input);
         System.out.println(result);
-        Assert.assertEquals(823, result);
+        assertEquals(823, result);
     }
 }

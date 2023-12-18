@@ -1,7 +1,9 @@
 package medium._994_rotting_oranges;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 public class RottingOrangesTest {
     @Test
@@ -9,7 +11,7 @@ public class RottingOrangesTest {
         var s = new Solution();
         var input = new int[][]{{2,1,1}, {1,1,0}, {0, 1,1}};
         var actual = s.orangesRotting(input);
-        Assert.assertEquals(4, actual);
+        assertEquals(4, actual);
     }
 
     @Test
@@ -17,7 +19,7 @@ public class RottingOrangesTest {
         var s = new Solution();
         var input = new int[][]{{2,1,1}, {0,1,1}, {1, 0,1}};
         var actual = s.orangesRotting(input);
-        Assert.assertEquals(-1, actual);
+        assertEquals(-1, actual);
     }
 
     @Test
@@ -25,7 +27,7 @@ public class RottingOrangesTest {
         var s = new Solution();
         var input = new int[][]{{0, 2}};
         var actual = s.orangesRotting(input);
-        Assert.assertEquals(0, actual);
+        assertEquals(0, actual);
     }
 
     @Test
@@ -33,7 +35,7 @@ public class RottingOrangesTest {
         var s = new Solution();
         var input = new int[][]{{0, 2}, {2, 0}};
         var actual = s.orangesRotting(input);
-        Assert.assertEquals(0, actual);
+        assertEquals(0, actual);
     }
 
     @Test
@@ -41,6 +43,6 @@ public class RottingOrangesTest {
         var s = new Solution();
         var input = new int[][]{{1, 0}, {0, 2}};
         var actual = s.orangesRotting(input);
-        Assert.assertEquals(-1, actual);
+        assertEquals(-1, actual);
     }
 }

@@ -1,6 +1,6 @@
 package easy._876_middle_of_linked_list;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import utils.ListNode;
 import static org.assertj.core.api.Assertions.assertThat;
 

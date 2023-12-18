@@ -1,7 +1,9 @@
 package medium._1584_min_cost_connect_all_points;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.Comparator;
 import java.util.HashSet;
@@ -58,7 +60,7 @@ public class SolutionTest {
         int actual = new Solution().minCostConnectPoints(
                 points
         );
-        Assert.assertEquals(20 , actual);
+        assertEquals(20 , actual);
     }
 
     @Test
@@ -67,7 +69,7 @@ public class SolutionTest {
         int actual = new Solution().minCostConnectPoints(
                 points
         );
-        Assert.assertEquals(18 , actual);
+        assertEquals(18 , actual);
     }
 
 }

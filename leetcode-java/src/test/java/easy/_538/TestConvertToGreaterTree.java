@@ -1,11 +1,11 @@
 package easy._538;
 
-import org.junit.Assert;
-import org.junit.Test;
-import utils.TreeNode;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+import utils.TreeNode;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
+
 public class TestConvertToGreaterTree {
 
     @Test
@@ -16,7 +16,7 @@ public class TestConvertToGreaterTree {
         var solution = new Solution();
         var updatedRoot = solution.convertBST(root);
         var result = TreeNode.printTree(updatedRoot);
-        Assert.assertArrayEquals(new Integer[]{18, 20 ,13}, result);
+        assertArrayEquals(new Integer[]{18, 20 ,13}, result);
 
     }
 
@@ -28,7 +28,7 @@ public class TestConvertToGreaterTree {
         var solution = new Solution();
         var updatedRoot = solution.convertBST(root);
         var result = TreeNode.printTree(updatedRoot);
-        Assert.assertArrayEquals(new Integer[]{5,6,3,2,6, null, null}, result);
+        assertArrayEquals(new Integer[]{5,6,3,2,6, null, null}, result);
 
     }
 
@@ -40,7 +40,7 @@ public class TestConvertToGreaterTree {
         var solution = new Solution();
         var updatedRoot = solution.convertBST(root);
         var result = TreeNode.printTree(updatedRoot);
-        Assert.assertArrayEquals(new Integer[]{6,5,6,2,null,null,4}, result);
+        assertArrayEquals(new Integer[]{6,5,6,2,null,null,4}, result);
 
     }
 }

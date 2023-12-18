@@ -1,10 +1,10 @@
 package medium._098_validate_bst;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import utils.TreeNode;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class SolutionTest {
     @Test
@@ -12,7 +12,7 @@ public class SolutionTest {
         var s = new Solution();
         TreeNode root = TreeNode.deserialize(new Integer[]{2, 1, 3});
         var actual = s.isValidBST(root);
-        Assert.assertEquals(actual, true);
+        assertEquals(actual, true);
     }
 
     @Test
@@ -20,7 +20,7 @@ public class SolutionTest {
         var s = new Solution();
         TreeNode root = TreeNode.deserialize(new Integer[]{5,1,4,null,null,3,6});
         var actual = s.isValidBST(root);
-        Assert.assertEquals(actual, false);
+        assertEquals(actual, false);
     }
 
     @Test
@@ -28,7 +28,7 @@ public class SolutionTest {
         var s = new Solution();
         TreeNode root = TreeNode.deserialize(new Integer[]{5,1,4,null,null,3,6});
         var actual = s.isValidBST(root);
-        Assert.assertEquals(actual, false);
+        assertEquals(actual, false);
     }
 
     @Test
@@ -36,7 +36,7 @@ public class SolutionTest {
         var s = new Solution();
         TreeNode root = TreeNode.deserialize(new Integer[]{5, 2, 7, null, null, 6, 8});
         var actual = s.isValidBST(root);
-        Assert.assertEquals(actual, true);
+        assertEquals(actual, true);
     }
 
     @Test
@@ -44,7 +44,7 @@ public class SolutionTest {
         var s = new Solution();
         TreeNode root = TreeNode.deserialize(new Integer[]{5, 2, 7, null, null, 6, 7});
         var actual = s.isValidBST(root);
-        Assert.assertEquals(actual, false);
+        assertEquals(actual, false);
     }
 
     @Test
@@ -52,7 +52,7 @@ public class SolutionTest {
         var s = new Solution();
         TreeNode root = TreeNode.deserialize(new Integer[]{});
         var actual = s.isValidBST(root);
-        Assert.assertEquals(actual, true);
+        assertEquals(actual, true);
     }
 
     @Test
@@ -60,7 +60,7 @@ public class SolutionTest {
         var s = new Solution();
         TreeNode root = TreeNode.deserialize(new Integer[]{3, 1, 5, 0, 1});
         var actual = s.isValidBST(root);
-        Assert.assertEquals(actual, false);
+        assertEquals(actual, false);
     }
 
     @Test
@@ -68,7 +68,7 @@ public class SolutionTest {
         var s = new Solution();
         TreeNode root = TreeNode.deserialize(new Integer[]{5,4,6,null,null,3,7});
         var actual = s.isValidBST(root);
-        Assert.assertEquals(actual, false);
+        assertEquals(actual, false);
     }
 
     @Test
@@ -76,7 +76,7 @@ public class SolutionTest {
         var s = new Solution();
         TreeNode root = TreeNode.deserialize(new Integer[]{2147483647});
         var actual = s.isValidBST(root);
-        Assert.assertEquals(actual, true);
+        assertEquals(actual, true);
     }
 
     @Test
@@ -84,7 +84,7 @@ public class SolutionTest {
         var s = new Solution();
         TreeNode root = TreeNode.deserialize(new Integer[]{Integer.MIN_VALUE, Integer.MIN_VALUE});
         var actual = s.isValidBST(root);
-        Assert.assertEquals(actual, false);
+        assertEquals(actual, false);
     }
 
     @Test
@@ -92,6 +92,6 @@ public class SolutionTest {
         var s = new Solution();
         TreeNode root = TreeNode.deserialize(new Integer[]{Integer.MAX_VALUE, Integer.MAX_VALUE});
         var actual = s.isValidBST(root);
-        Assert.assertEquals(actual, false);
+        assertEquals(actual, false);
     }
 }

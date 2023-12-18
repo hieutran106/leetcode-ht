@@ -1,7 +1,9 @@
 package medium._767;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 public class ReorganizeStringTest {
     @Test
@@ -9,7 +11,7 @@ public class ReorganizeStringTest {
         var input = "aab";
         var s = new Solution();
         var actual = s.reorganizeString(input);
-        Assert.assertEquals("aba", actual);
+        assertEquals("aba", actual);
     }
 
     @Test
@@ -17,7 +19,7 @@ public class ReorganizeStringTest {
         var input = "aaab";
         var s = new Solution();
         var actual = s.reorganizeString(input);
-        Assert.assertEquals("", actual);
+        assertEquals("", actual);
     }
 
     @Test
@@ -25,6 +27,6 @@ public class ReorganizeStringTest {
         var input = "aaabbc";
         var s = new Solution();
         var actual = s.reorganizeString(input);
-        Assert.assertEquals("ababac", actual);
+        assertEquals("ababac", actual);
     }
 }

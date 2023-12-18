@@ -1,10 +1,10 @@
 package easy._234_palindrome_linked_list;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import utils.ListNode;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class SolutionTest {
     @Test
@@ -12,7 +12,7 @@ public class SolutionTest {
 
         var s = new Solution();
         var actual = s.isPalindrome(null);
-        Assert.assertEquals(true, actual);
+        assertEquals(true, actual);
     }
 
     @Test
@@ -20,7 +20,7 @@ public class SolutionTest {
         var input = ListNode.getListFromArray(new int[]{1, 2});
         var s = new Solution();
         var actual = s.isPalindrome(input);
-        Assert.assertEquals(false, actual);
+        assertEquals(false, actual);
     }
 
     @Test
@@ -28,7 +28,7 @@ public class SolutionTest {
         var input = ListNode.getListFromArray(new int[]{1, 2, 2, 1});
         var s = new Solution();
         var actual = s.isPalindrome(input);
-        Assert.assertEquals(true, actual);
+        assertEquals(true, actual);
     }
 
     @Test
@@ -36,7 +36,7 @@ public class SolutionTest {
         var input = ListNode.getListFromArray(new int[]{1, 2, 1});
         var s = new Solution();
         var actual = s.isPalindrome(input);
-        Assert.assertEquals(true, actual);
+        assertEquals(true, actual);
     }
 
     @Test
@@ -44,7 +44,7 @@ public class SolutionTest {
         var input = ListNode.getListFromArray(new int[]{1, 2, 3, 4, 2, 1});
         var s = new Solution();
         var actual = s.isPalindrome(input);
-        Assert.assertEquals(false, actual);
+        assertEquals(false, actual);
     }
 
     @Test
@@ -52,6 +52,6 @@ public class SolutionTest {
         var input = ListNode.getListFromArray(new int[]{1, 2});
         var s = new Solution();
         var actual = s.reverseRecursively(input);
-        Assert.assertEquals(1, 1);
+        assertEquals(1, 1);
     }
 }

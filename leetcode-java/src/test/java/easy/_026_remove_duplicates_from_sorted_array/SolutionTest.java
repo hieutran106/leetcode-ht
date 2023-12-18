@@ -1,11 +1,12 @@
 package easy._026_remove_duplicates_from_sorted_array;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.*;
 
 public class SolutionTest {
 
@@ -14,10 +15,10 @@ public class SolutionTest {
         var s = new Solution();
         int[] intput = new int[]{1, 1, 2};
         var actual = s.removeDuplicates(intput);
-        Assert.assertEquals(actual, 2);
+        assertEquals(actual, 2);
 
         int[] newArray = Arrays.copyOfRange(intput, 0, actual);
-        Assert.assertArrayEquals(newArray, new int[]{1, 2});
+        assertArrayEquals(newArray, new int[]{1, 2});
 
     }
 
@@ -26,9 +27,9 @@ public class SolutionTest {
         var s = new Solution();
         int[] intput = new int[]{0,0,1,1,1,2,2,3,3,4};
         var actual = s.removeDuplicates(intput);
-        // Assert.assertEquals(actual, 5);
+        // assertEquals(actual, 5);
         int[] newArray = Arrays.copyOfRange(intput, 0, 5);
-        Assert.assertArrayEquals(newArray, new int[]{0, 1, 2, 3, 4});
+        assertArrayEquals(newArray, new int[]{0, 1, 2, 3, 4});
     }
 
     @Test
@@ -36,10 +37,10 @@ public class SolutionTest {
         var s = new Solution();
         int[] intput = new int[]{0, 1, 2, 3};
         var actual = s.removeDuplicates(intput);
-        // Assert.assertEquals(actual, 4);
+        // assertEquals(actual, 4);
 
         int[] newArray = Arrays.copyOfRange(intput, 0, 4);
-        Assert.assertArrayEquals(newArray, new int[]{0, 1, 2, 3});
+        assertArrayEquals(newArray, new int[]{0, 1, 2, 3});
     }
 
     @Test
@@ -47,7 +48,7 @@ public class SolutionTest {
         var s = new Solution();
         int[] intput = new int[]{};
         var actual = s.removeDuplicates(intput);
-        Assert.assertEquals(actual, 0);
+        assertEquals(actual, 0);
 
     }
 
@@ -56,7 +57,7 @@ public class SolutionTest {
         var s = new Solution();
         int[] intput = new int[]{1};
         var actual = s.removeDuplicates(intput);
-        Assert.assertEquals(actual, 1);
+        assertEquals(actual, 1);
     }
 
     @Test
@@ -64,6 +65,6 @@ public class SolutionTest {
         var s = new Solution();
         int[] intput = new int[]{1, 2};
         var actual = s.removeDuplicates(intput);
-        Assert.assertEquals(actual, 2);
+        assertEquals(actual, 2);
     }
 }

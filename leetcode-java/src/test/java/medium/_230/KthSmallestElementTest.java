@@ -1,7 +1,9 @@
 package medium._230;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 import utils.TreeNode;
 
 public class KthSmallestElementTest {
@@ -11,7 +13,7 @@ public class KthSmallestElementTest {
         TreeNode root = TreeNode.fromArray(input);
         var solution = new Solution();
         var result = solution.kthSmallest(root, 1);
-        Assert.assertEquals(1, result);
+        assertEquals(1, result);
     }
     @Test()
     public void testCase2() {
@@ -19,6 +21,6 @@ public class KthSmallestElementTest {
         TreeNode root = TreeNode.fromArray(input);
         var solution = new Solution();
         var result = solution.kthSmallest(root, 3);
-        Assert.assertEquals(3, result);
+        assertEquals(3, result);
     }
 }

@@ -1,7 +1,7 @@
 package medium._763;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import org.junit.jupiter.api.Test;
 
 public class PartitionLabelsTest {
     public static ISolution763 getSolution() {
@@ -12,7 +12,7 @@ public class PartitionLabelsTest {
         var s = PartitionLabelsTest.getSolution();
         var result = s.partitionLabels("ababcbacadefegdehijhklij");
         var actual = result.toArray(new Integer[result.size()]);
-        Assert.assertArrayEquals(actual, new Integer[]{9,7,8});
+        assertArrayEquals(actual, new Integer[]{9,7,8});
     }
 
     @Test
@@ -20,7 +20,7 @@ public class PartitionLabelsTest {
         var s = PartitionLabelsTest.getSolution();
         var result = s.partitionLabels("hijhklij");
         var actual = result.toArray(new Integer[result.size()]);
-        Assert.assertArrayEquals(actual, new Integer[]{8});
+        assertArrayEquals(actual, new Integer[]{8});
     }
 
     @Test
@@ -28,7 +28,7 @@ public class PartitionLabelsTest {
         var s = PartitionLabelsTest.getSolution();
         var result = s.partitionLabels("abcd");
         var actual = result.toArray(new Integer[result.size()]);
-        Assert.assertArrayEquals(actual, new Integer[]{1, 1, 1, 1});
+        assertArrayEquals(actual, new Integer[]{1, 1, 1, 1});
     }
 
     @Test
@@ -36,7 +36,7 @@ public class PartitionLabelsTest {
         var s = PartitionLabelsTest.getSolution();
         var result = s.partitionLabels("abad");
         var actual = result.toArray(new Integer[result.size()]);
-        Assert.assertArrayEquals(actual, new Integer[]{3, 1});
+        assertArrayEquals(actual, new Integer[]{3, 1});
     }
 
     @Test
@@ -44,7 +44,7 @@ public class PartitionLabelsTest {
         var s = PartitionLabelsTest.getSolution();
         var result = s.partitionLabels("");
         var actual = result.toArray(new Integer[result.size()]);
-        Assert.assertArrayEquals(actual, new Integer[]{});
+        assertArrayEquals(actual, new Integer[]{});
     }
 
     @Test
@@ -52,7 +52,7 @@ public class PartitionLabelsTest {
         var s = PartitionLabelsTest.getSolution();
         var result = s.partitionLabels("aac");
         var actual = result.toArray(new Integer[result.size()]);
-        Assert.assertArrayEquals(actual, new Integer[]{2,1});
+        assertArrayEquals(actual, new Integer[]{2,1});
     }
 
 }

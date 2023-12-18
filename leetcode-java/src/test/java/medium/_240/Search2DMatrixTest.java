@@ -1,7 +1,9 @@
 package medium._240;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 public class Search2DMatrixTest {
     @Test
@@ -15,7 +17,7 @@ public class Search2DMatrixTest {
         };
         var s = new Solution();
         var actual = s.searchMatrix(input, 5);
-        Assert.assertEquals(actual, true);
+        assertEquals(actual, true);
     }
 
     @Test
@@ -29,7 +31,7 @@ public class Search2DMatrixTest {
         };
         var s = new Solution();
         var actual = s.searchMatrix(input, 20);
-        Assert.assertEquals(actual, false);
+        assertEquals(actual, false);
     }
 
     @Test
@@ -37,6 +39,6 @@ public class Search2DMatrixTest {
         var input = new int[][]{{}};
         var s = new Solution();
         var actual = s.searchMatrix(input, 0);
-        Assert.assertEquals(actual, false);
+        assertEquals(actual, false);
     }
 }

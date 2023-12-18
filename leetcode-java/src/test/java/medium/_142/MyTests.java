@@ -2,17 +2,13 @@ package medium._142;
 
 
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.w3c.dom.NodeList;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
-import static org.junit.Assert.assertEquals;
 
 public class MyTests {
     @Test

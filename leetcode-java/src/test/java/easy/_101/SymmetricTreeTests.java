@@ -1,6 +1,8 @@
 package easy._101;
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 import utils.TreeNode;
 
 public class SymmetricTreeTests {
@@ -11,7 +13,7 @@ public class SymmetricTreeTests {
         TreeNode root = TreeNode.fromArray(input);
         var solution = new Solution2();
         var result = solution.isSymmetric(root);
-        Assert.assertEquals(result, true);
+        assertEquals(result, true);
     }
 
     @Test
@@ -21,7 +23,7 @@ public class SymmetricTreeTests {
         TreeNode root = TreeNode.fromArray(input);
         var solution = new Solution2();
         var result = solution.isSymmetric(root);
-        Assert.assertEquals(result, false);
+        assertEquals(result, false);
     }
 
     @Test
@@ -31,14 +33,14 @@ public class SymmetricTreeTests {
         TreeNode root = TreeNode.fromArray(input);
         var solution = new Solution2();
         var result = solution.isSymmetric(root);
-        Assert.assertEquals(result, true);
+        assertEquals(result, true);
     }
 
     @Test
     public void testCase4() {
         var solution = new Solution2();
         var result = solution.isSymmetric(null);
-        Assert.assertEquals(result, true);
+        assertEquals(result, true);
     }
 
     @Test
@@ -48,6 +50,6 @@ public class SymmetricTreeTests {
         TreeNode root = TreeNode.fromArray(input);
         var solution = new Solution2();
         var result = solution.isSymmetric(root);
-        Assert.assertEquals(result, false);
+        assertEquals(result, false);
     }
 }

@@ -1,8 +1,9 @@
 package medium._146;
 
-import medium._146.LRUCache;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class MyTests {
     @Test

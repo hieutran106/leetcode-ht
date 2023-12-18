@@ -1,9 +1,9 @@
 package medium._807_max_increase_to_keep_city_skyline;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class SolutionTest {
 
@@ -17,7 +17,7 @@ public class SolutionTest {
                 {0,3,1,0}
         };
         int output = s.maxIncreaseKeepingSkyline(input);
-        Assert.assertEquals(35, output);
+        assertEquals(35, output);
     }
 
     @Test
@@ -29,7 +29,7 @@ public class SolutionTest {
                 {0,0,0}
         };
         int output = s.maxIncreaseKeepingSkyline(input);
-        Assert.assertEquals(0, output);
+        assertEquals(0, output);
     }
 
     @Test
@@ -40,6 +40,6 @@ public class SolutionTest {
                 {0,1}
         };
         int output = s.maxIncreaseKeepingSkyline(input);
-        Assert.assertEquals(0, output);
+        assertEquals(0, output);
     }
 }

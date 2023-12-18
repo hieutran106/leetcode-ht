@@ -1,9 +1,10 @@
 package medium._005;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class LongestPalindromeTests {
 
@@ -11,7 +12,7 @@ public class LongestPalindromeTests {
     public void testIsPalindrome1() {
         var solution = new Solution();
         var result = solution.isPalindrome1(1, "abba", false);
-        Assert.assertArrayEquals(result, new int[]{0, 3});
+        assertArrayEquals(result, new int[]{0, 3});
     }
 
     @Test
@@ -19,7 +20,7 @@ public class LongestPalindromeTests {
         var solution = new Solution();
         var result = solution.isPalindrome1(1, "cdc", true);
         System.out.println(Arrays.toString(result));
-        Assert.assertArrayEquals(result, new int[]{0, 2});
+        assertArrayEquals(result, new int[]{0, 2});
     }
 
     @Test
@@ -27,7 +28,7 @@ public class LongestPalindromeTests {
         var solution = new Solution();
         var result = solution.isPalindrome1(1, "abbc", false);
 
-        Assert.assertArrayEquals(result, new int[] {1, 2});
+        assertArrayEquals(result, new int[] {1, 2});
     }
 
     @Test
@@ -36,7 +37,7 @@ public class LongestPalindromeTests {
         var result = solution.longestPalindrome("babad");
         System.out.println(result);
 
-        Assert.assertTrue(result.equals("bab") || result.equals("aba"));
+        assertTrue(result.equals("bab") || result.equals("aba"));
     }
 
     @Test
@@ -44,7 +45,7 @@ public class LongestPalindromeTests {
         var solution = new Solution();
         var result = solution.longestPalindrome("cbbd");
         System.out.println(result);
-        Assert.assertEquals(result, "bb");
+        assertEquals(result, "bb");
     }
 
     @Test
@@ -52,7 +53,7 @@ public class LongestPalindromeTests {
         var solution = new Solution();
         var result = solution.longestPalindrome("");
         System.out.println(result);
-        Assert.assertEquals(result, "");
+        assertEquals(result, "");
     }
 
     @Test
@@ -60,7 +61,7 @@ public class LongestPalindromeTests {
         var solution = new Solution();
         var result = solution.longestPalindrome("abcd1234321ghikabcdeffedcbatretoirt");
         System.out.println(result);
-        Assert.assertEquals(result, "abcdeffedcba");
+        assertEquals(result, "abcdeffedcba");
     }
 
     @Test
@@ -68,7 +69,7 @@ public class LongestPalindromeTests {
         var solution = new Solution();
         var result = solution.longestPalindrome("a");
         System.out.println(result);
-        Assert.assertEquals(result, "a");
+        assertEquals(result, "a");
     }
 
     @Test
@@ -76,7 +77,7 @@ public class LongestPalindromeTests {
         var solution = new Solution();
         var result = solution.longestPalindrome("abcdef");
         System.out.println(result);
-        Assert.assertEquals(result, "a");
+        assertEquals(result, "a");
     }
 
     @Test
@@ -84,6 +85,6 @@ public class LongestPalindromeTests {
         var solution = new Solution();
         var result = solution.longestPalindrome("bb");
         System.out.println(result);
-        Assert.assertEquals(result, "bb");
+        assertEquals(result, "bb");
     }
 }
