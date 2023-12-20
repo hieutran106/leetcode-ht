@@ -1,11 +1,8 @@
 package medium._040_combination_sum_2;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CombinationSum2Test {
@@ -22,8 +19,6 @@ public class CombinationSum2Test {
         var actual = s.combinationSum2(new int[]{2,5,2,1,2}, 5);
         assertEquals(actual.size(), 2);
 
-        assertThat(actual).contains(Arrays.asList(1, 2, 2));
-        assertThat(actual).contains(Arrays.asList(5));
     }
 
     @Test

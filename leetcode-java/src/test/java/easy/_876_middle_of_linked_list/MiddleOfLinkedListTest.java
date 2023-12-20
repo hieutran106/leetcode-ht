@@ -2,7 +2,7 @@ package easy._876_middle_of_linked_list;
 
 import org.junit.jupiter.api.Test;
 import utils.ListNode;
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Assertions;
 
 public class MiddleOfLinkedListTest {
     @Test
@@ -10,7 +10,8 @@ public class MiddleOfLinkedListTest {
         var head = ListNode.getListFromArray(new int[]{1, 2, 3, 4, 5});
         var s = new Solution();
         var actual = s.middleNode(head);
-        assertThat(actual.val).isEqualTo(3);
+        Assertions.assertEquals(actual.val, 3);
+
     }
 
     @Test
@@ -18,7 +19,7 @@ public class MiddleOfLinkedListTest {
         var head = ListNode.getListFromArray(new int[]{1, 2});
         var s = new Solution();
         var actual = s.middleNode(head);
-        assertThat(actual.val).isEqualTo(2);
+        Assertions.assertEquals(actual.val, 2);
     }
 
     @Test
@@ -26,6 +27,6 @@ public class MiddleOfLinkedListTest {
         var head = ListNode.getListFromArray(new int[]{1, 2, 3});
         var s = new Solution();
         var actual = s.middleNode(head);
-        assertThat(actual.val).isEqualTo(2);
+        Assertions.assertEquals(actual.val, 2);
     }
 }

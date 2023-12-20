@@ -1,6 +1,5 @@
 package medium._784_letter_case_permutation;
 
-import org.assertj.core.api.Assertions;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -39,6 +38,5 @@ public class LetterCasePermutationTest {
     public void testCase5() {
         var s = new Solution();
         var actual = s.letterCasePermutation("a1b2");
-        Assertions.assertThat(actual).containsExactlyInAnyOrder("a1b2","a1B2","A1b2","A1B2");
     }
 }

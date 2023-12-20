@@ -18,13 +18,6 @@
             <version>5.9.0</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>3.12.1</version>
-            <scope>test</scope>
-        </dependency>
 
 
 
