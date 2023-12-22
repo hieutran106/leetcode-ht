@@ -24,8 +24,8 @@ if __name__ == "__main__":
     file = os.path.join(path, 'SolutionTest.java')
     with open(file, 'w+') as f:
         test_content = f"""package {difficulty}.{problem};
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 
 public class SolutionTest {{
     public static class Solution {{

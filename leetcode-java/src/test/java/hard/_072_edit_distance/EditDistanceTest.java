@@ -1,9 +1,6 @@
 package hard._072_edit_distance;
 
-
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
 
 public class EditDistanceTest {
