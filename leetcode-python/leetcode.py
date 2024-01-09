@@ -49,9 +49,11 @@ if __name__ == "__main__":
     open(file, 'a').close()
 
     # create solution.py
-    file = os.path.join(path, 'solution.py')
-    with open(file, 'w+') as f:
-        f.writelines(solution_content)
+    create_solution_file = False
+    if create_solution_file:
+        file = os.path.join(path, 'solution.py')
+        with open(file, 'w+') as f:
+            f.writelines(solution_content)
 
     # create test_solution.py
     file = os.path.join(path, 'test_solution.py')
