@@ -25,6 +25,9 @@ class Solution:
 
 class Solution2:
     def sumSubarrayMins(self, arr: List[int]) -> int:
+        # normally, we will build subarray then find min
+        # in this problem, we use a different approach
+        # consider arr[i] is min, construct all sub-arrays that arr[i] is min value
         sum = 0
         mod = 10 ** 9 + 7
 
