@@ -21,6 +21,7 @@ def createListFromArray(arr: List) -> ListNode:
         if index == 0:
             return node
 
+
 def createArrayFromList(head: ListNode) -> List[int]:
     result = []
     while head is not None:
@@ -28,3 +29,11 @@ def createArrayFromList(head: ListNode) -> List[int]:
         head = head.next
 
     return result
+
+
+def deserialize(data: str):
+    n = len(data)
+    if data.startswith('[') and data.endswith(']'):
+        data = data[1:n - 1]
+    ret = list(map(lambda x: int(x), data.split(',')))
+    return ret
