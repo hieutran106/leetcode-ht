@@ -2,30 +2,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C/C++: make build and debug active file",
-            "type": "cppdbg",
+            // See https://code.visualstudio.com/docs/cpp/launch-json-reference
+            "type": "lldb",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}.out",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                },
-                {
-                    "description": "Set Disassembly Flavor to Intel",
-                    "text": "-gdb-set disassembly-flavor intel",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "Make build active file",
-            "miDebuggerPath": "/usr/bin/gdb"
+            "name": "Debug",
+            "program": "${workspaceFolder}/bin/test_solution",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "build debug",
+            "sourceLanguages": [
+                "c"
+            ]
         }
     ]
 }

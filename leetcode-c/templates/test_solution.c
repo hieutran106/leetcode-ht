@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "unity/unity.h"
+#include "../../../deps/Unity/src/unity.h"
 #include "solution.h"
 
 void setUp(void)
