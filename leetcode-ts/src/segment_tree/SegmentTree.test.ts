@@ -16,5 +16,10 @@ describe("segment tree test", () => {
         expect(actual).toEqual(26);
     });
 
-    test("test case 3", () => {});
+    test("test case 3", () => {
+        const tree = new SegmentTree([3, 4, 10, 2, 7]);
+        tree.update(0, 4);
+        const actual = tree.query(0, 4);
+        expect(actual).toEqual(27);
+    });
 });
