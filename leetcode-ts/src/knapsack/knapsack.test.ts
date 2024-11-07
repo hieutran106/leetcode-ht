@@ -22,7 +22,7 @@ function knapsack(weights: number[], values: number[], capacity) {
     return dfs(0, capacity);
 }
 
-describe("segment tree test", () => {
+describe("knapsack test", () => {
     test("test case 1", () => {
         const actual = knapsack([2, 3, 1, 4], [4, 5, 3, 7], 5);
         expect(actual).toBe(10);
