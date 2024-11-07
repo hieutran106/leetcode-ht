@@ -9,6 +9,7 @@ class Solution:
                     Compare it with the root (smallest element) of the min heap.
                     If the current element is larger, remove the root and insert the new element.
                     If it's smaller, ignore it and move to the next element.
+        TC: O(nlogk) better than O(nlogn - if we just sort)
         """
         min_heap = []
         for n in nums:
