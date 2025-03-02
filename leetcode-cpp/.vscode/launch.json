@@ -1,6 +1,17 @@
 {
   "configurations": [
     {
+      "name": "ht-launch active file (require build)",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "console": "externalTerminal"
+    },
+    {
       "name": "Build using make and debug active file",
       "type": "cppdbg",
       "request": "launch",

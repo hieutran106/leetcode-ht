@@ -34,10 +34,4 @@ TEST(test_case_2)
     ASSERT_EQUAL(actual, 1);
 }
 
-TEST(pause)
-{
-    cout << "Press Enter to exit...";
-    cin.get();
-}
-
 TEST_MAIN()
