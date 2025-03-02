@@ -9,13 +9,14 @@
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],
-      "console": "externalTerminal"
+      "console": "externalTerminal",
+      "preLaunchTask": "Make: compile active file"
     },
     {
       "name": "Build using make and debug active file",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe",
+      "program": "${workspaceFolder}/build/${fileBasenameNoExtension}.exe",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
