@@ -50,7 +50,7 @@ public:
     void run()
     {
         int passed = 0;
-        int total = tests.size();
+        long unsigned int total = tests.size();
 
         for (const auto &test : tests)
         {

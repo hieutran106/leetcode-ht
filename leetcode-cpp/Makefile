@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -pedantic-errors
+CXXFLAGS = -std=c++17 -pedantic-errors -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion
 DEBUGFLAGS = -g
 BUILD_DIR = ./build
 LC_SOLUTION_PATH ?= lc_path
