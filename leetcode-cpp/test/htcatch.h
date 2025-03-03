@@ -96,15 +96,12 @@ TestSuite &get_test_suite()
     } name##_reg;                                                      \
     void name()
 
-#define TEST_MAIN()                                                         \
-    int main()                                                              \
-    {                                                                       \
-        std::cout << __cplusplus << std::endl;                              \
-        get_test_suite().run();                                             \
-        std::cout << "Press Enter to exit...";                              \
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); \
-        std::cin.get();                                                     \
-        return 0;                                                           \
+#define TEST_MAIN()                            \
+    int main()                                 \
+    {                                          \
+        std::cout << __cplusplus << std::endl; \
+        get_test_suite().run();                \
+        return 0;                              \
     }
 
 #endif // SIMPLE_TEST_H

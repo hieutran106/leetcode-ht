@@ -2,22 +2,29 @@ import sys
 import os
 
 
-test_content = """import unittest
-from typing import List
+test_content = """#include "../test/htcatch.h"
+#include <vector>
+#include <iostream>
+#include <iterator>
 
-class MyTestCase(unittest.TestCase):
+using namespace std;
 
-    def setUp(self) -> None:
-        self.s = Solution()
-    
-    def test_case_1(self):
-        pass
-        
-    def test_case_2(self):
-        pass
+class Solution
+{
+};
 
-if __name__ == '__main__':
-    unittest.main()
+TEST(test_case_1)
+{
+    Solution s;
+    ASSERT_TRUE(true);
+}
+TEST(test_case_2)
+{
+    Solution s;
+    ASSERT_TRUE(true);
+}
+
+TEST_MAIN()
 
 """
 
@@ -34,7 +41,7 @@ if __name__ == "__main__":
     bucket_num = (number // bucket_size) * bucket_size
     # _20xx
     bucket_name = f"_{bucket_num // 100}xx"
-    filename = f"_{number}_{name}.py"
+    filename = f"_{number}_{name}.cpp"
     cwd = os.getcwd()
 
     bucket_path = os.path.join(cwd, bucket_name)
@@ -47,9 +54,6 @@ if __name__ == "__main__":
 
     print(f'Create bucket folder {bucket_name}')
     os.makedirs(bucket_path, exist_ok=True)
-    # create __init__.py if needed
-    if not os.path.exists(init_file_path):
-        open(init_file_path, 'a').close()
 
     # create solution file
     with open(solution_file_path, 'w+') as f:
