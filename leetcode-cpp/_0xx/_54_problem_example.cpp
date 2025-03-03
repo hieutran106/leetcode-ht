@@ -1,24 +1,30 @@
-#include "../test/htcatch.h"
+#include "../test/catch_amalgamated.hpp"
 
-int add(int a, int b)
+using namespace std;
+
+class Solution
 {
-    return a + b;
+public:
+    vector<int> twoSum(vector<int> &nums, int target)
+    {
+        return vector<int>{10, 20};
+    }
+};
+
+TEST_CASE("Test case 1")
+{
+    Solution s;
+    auto nums = vector<int>{2, 7, 11, 15};
+    auto actual = s.twoSum(nums, 9);
+    auto expect = vector<int>{0, 1};
+    CHECK(actual == expect);
 }
 
-TEST(test_case_1)
+TEST_CASE("Test case 2")
 {
-    ASSERT_EQUAL(4, 4);
-    ASSERT_EQUAL(0, add(-1, 1));
+    Solution s;
+    auto nums = vector<int>{3, 2, 4};
+    auto actual = s.twoSum(nums, 6);
+    auto expect = vector<int>{1, 2};
+    CHECK(actual == expect);
 }
-TEST(test_case_2)
-{
-    ASSERT_TRUE(add(1, 1) < 0);
-}
-
-TEST(test_case_3)
-{
-    ASSERT_EQUAL(4, 4);
-    ASSERT_EQUAL(0, add(-1, 1));
-}
-
-TEST_MAIN()
