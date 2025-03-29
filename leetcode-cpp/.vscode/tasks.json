@@ -1,0 +1,20 @@
+{
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "Make: compile active file",
+      "command": "make",
+      "args": [
+        "LC_SOLUTION_PATH=${relativeFileDirname}",
+        "LC_SOLUTION_FILE=${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": "build",
+      "detail": "Use make to compile active file"
+    }
+  ],
+  "version": "2.0.0"
+}

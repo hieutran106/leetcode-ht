@@ -1,10 +1,12 @@
+import re
 import sys
 import os
-
+from datetime import datetime
 
 test_content = """import unittest
 from typing import List
 
+#{current_date}
 class MyTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
@@ -24,6 +26,10 @@ if __name__ == '__main__':
 solution_content = """class Solution:
     pass
 """
+
+def replace_pattern(text, replacement):
+    pattern = r'\{.*?\}'
+    return re.sub(pattern, replacement, text)
 
 if __name__ == "__main__":
     number = int(sys.argv[1])
@@ -53,7 +59,10 @@ if __name__ == "__main__":
 
     # create solution file
     with open(solution_file_path, 'w+') as f:
-        f.writelines(test_content)
+        current_date = datetime.now()
+        formatted_date = current_date.strftime("%Y-%d-%m")
+        new_test_content = replace_pattern(test_content, formatted_date)
+        f.writelines(new_test_content)
 
 
 
