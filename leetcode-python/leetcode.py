@@ -6,7 +6,11 @@ from datetime import datetime
 test_content = """import unittest
 from typing import List
 
-#{current_date}
+# Date: {current_date}
+class Solution:
+    pass
+    
+
 class MyTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
