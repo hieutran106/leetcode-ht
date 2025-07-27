@@ -27,6 +27,10 @@ class MyTestCase(unittest.TestCase):
         actual = self.s.sumSubarrayMins([71,55,82,55])
         self.assertEqual(593, actual)
 
+    def test_case_7(self):
+        actual = self.s.sumSubarrayMins([3, 7, 8, 4])
+        self.assertEqual(46, actual)
+
     def test_case6(self):
         file_path = join('_907_sum_of_subarray_minimums', 'input.txt')
         with open(file_path, 'r') as reader:
