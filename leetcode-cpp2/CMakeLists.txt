@@ -19,3 +19,4 @@ FetchContent_MakeAvailable(catch2)
 
 add_subdirectory(_0xx)
 add_subdirectory(_2xx)
+add_subdirectory(_22xx)

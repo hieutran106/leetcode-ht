@@ -1,0 +1,3 @@
+
+add_executable(_2264_largest_3_same_digit_in_string _2264_largest_3_same_digit_in_string.cpp)
+target_link_libraries(_2264_largest_3_same_digit_in_string PRIVATE Catch2::Catch2WithMain)
