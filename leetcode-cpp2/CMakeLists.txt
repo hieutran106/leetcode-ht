@@ -12,3 +12,4 @@ FetchContent_MakeAvailable(catch2)
 #include(Catch)
 
 add_subdirectory(_0xx)
+add_subdirectory(_2xx)
