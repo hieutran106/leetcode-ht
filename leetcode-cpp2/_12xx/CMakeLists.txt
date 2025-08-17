@@ -1,0 +1,3 @@
+
+add_executable(_1323_max_69_number _1323_max_69_number.cpp)
+target_link_libraries(_1323_max_69_number PRIVATE Catch2::Catch2WithMain)
