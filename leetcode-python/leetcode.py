@@ -5,10 +5,13 @@ import sys
 import os
 from datetime import datetime
 
-test_content = """import unittest
+_pattern = re.compile(r'\{\s*([A-Za-z_][A-Za-z0-9_]*)\s*\}')
+
+solution_template = """import unittest
 from typing import List
 
 # Date: {current_date}
+# Problem: {problem_number} {name}
 class Solution:
     pass
     
@@ -29,9 +32,15 @@ if __name__ == '__main__':
 
 """
 
-solution_content = """class Solution:
-    pass
-"""
+def render(template: str, data: dict, missing: str = '') -> str:
+    """
+    Replace { name } with data['name'] for simple identifiers.
+    If a key is missing, insert the value of `missing` (default: '').
+    """
+    def _repl(m):
+        key = m.group(1)
+        return str(data.get(key, missing))
+    return _pattern.sub(_repl, template)
 
 def replace_pattern(text, replacement):
     pattern = r'\{.*?\}'
@@ -67,8 +76,13 @@ if __name__ == "__main__":
     with open(solution_file_path, 'w+') as f:
         current_date = datetime.now()
         formatted_date = current_date.strftime("%Y-%d-%m")
-        new_test_content = replace_pattern(test_content, formatted_date)
-        f.writelines(new_test_content)
+        data = {
+            "current_date": formatted_date,
+            "problem_number": number,
+            "name": name
+        }
+        content = render(solution_template, data)
+        f.writelines(content)
 
 
 
