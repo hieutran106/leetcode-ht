@@ -1,3 +1,6 @@
 
 add_executable(_1323_max_69_number _1323_max_69_number.cpp)
 target_link_libraries(_1323_max_69_number PRIVATE Catch2::Catch2WithMain)
+
+add_executable(_1277_count_square_submatrices_with_all_ones _1277_count_square_submatrices_with_all_ones.cpp)
+target_link_libraries(_1277_count_square_submatrices_with_all_ones PRIVATE Catch2::Catch2WithMain)

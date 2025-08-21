@@ -2,7 +2,7 @@
 #include <catch2/catch_test_macros.hpp>
 
 // Date: 2025-15-08
-using std::string;
+using namespace std;
 
 class Solution {
 public:
