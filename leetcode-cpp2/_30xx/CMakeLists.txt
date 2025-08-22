@@ -1,0 +1,3 @@
+
+add_executable(_3195_find_min_area_cover_all_ones _3195_find_min_area_cover_all_ones.cpp)
+target_link_libraries(_3195_find_min_area_cover_all_ones PRIVATE Catch2::Catch2WithMain)

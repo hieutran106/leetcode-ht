@@ -1,13 +1,11 @@
 import unittest
 from typing import List
-import math
+
+
 # Date: 2025-08-20
 class Solution:
     def new21Game(self, n: int, k: int, maxPts: int) -> float:
-        """
-        This solution is Time Limit Exceeded. The inner for loop can be optimized
-        """
-        if k == 0:
+        if k == 0 or n >= k + maxPts - 1: # edge case
             return 1
         dp = [0] * (n+1) # dp[i] 0 probability that Alice get exact i point
         dp[0] = 1
@@ -21,16 +19,6 @@ class Solution:
             r = min(i - 1, k - 1)
             optmz = (prefix_sum[r] - prefix_sum[l-1])/maxPts
 
-            no_optmz = 0
-            for p in range(1, maxPts + 1):
-                if i -p >=0 and i-p <k:
-                    no_optmz += dp[i-p] * 1/maxPts
-
-            bad = math.isclose(optmz, optmz)
-            if bad:
-                print("Bad")
-            else:
-                print("Good")
             dp[i] = optmz
             prefix_sum[i] = prefix_sum[i-1] + dp[i]
 
@@ -90,6 +78,10 @@ class MyTestCase(unittest.TestCase):
     def test_case_6(self):
         actual = self.s.new21Game(n=12, k=1, maxPts=10)
         self.assertAlmostEqual(actual, 1.0, None, "", 10 ** -5)
+
+    def test_case_7(self):
+        actual = self.s.new21Game(n=21, k=17, maxPts=10)
+        self.assertAlmostEqual(actual, 0.732778, None, "", 10 ** -5)
 
 if __name__ == '__main__':
     unittest.main()
