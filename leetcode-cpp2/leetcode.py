@@ -7,30 +7,38 @@ import glob
 from pathlib import Path
 from datetime import datetime
 
-test_content = """
+_pattern = re.compile(r'\{\s*([A-Za-z_][A-Za-z0-9_]*)\s*\}')
+
+solution_template = """
 #include <catch2/catch_test_macros.hpp>
 
 // Date: {current_date}
+// Problem: {problem_number} {problem_name}
 class Solution {
 
 };
 
-TEST_CASE("Test case 1", "") {
-    Solution s;
+Solution s;
+TEST_CASE("[{problem_number}] Test case 1", "") {
     REQUIRE(1 == 1);
 }
 
 
-TEST_CASE("Test case 2", "") {
-    Solution s;
+TEST_CASE("[{problem_number}] Test case 2", "") {
     REQUIRE(1 == 1);
 }
 
 """
 
-def replace_pattern(text, replacement):
-    pattern = r'\{.*?\}'
-    return re.sub(pattern, replacement, text)
+def render(template: str, data: dict, missing: str = '') -> str:
+    """
+    Replace { name } with data['name'] for simple identifiers.
+    If a key is missing, insert the value of `missing` (default: '').
+    """
+    def _repl(m):
+        key = m.group(1)
+        return str(data.get(key, missing))
+    return _pattern.sub(_repl, template)
 
 if __name__ == "__main__":
     number = int(sys.argv[1])
@@ -63,9 +71,14 @@ if __name__ == "__main__":
     # create solution file
     with open(solution_file_path, 'w+') as f:
         current_date = datetime.now()
-        formatted_date = current_date.strftime("%Y-%d-%m")
-        new_test_content = replace_pattern(test_content, formatted_date)
-        f.writelines(new_test_content)
+        formatted_date = current_date.strftime("%Y-%m-%d")
+        data = {
+            "current_date": formatted_date,
+            "problem_number": number,
+            "problem_name": name
+        }
+        content = render(solution_template, data)
+        f.writelines(content)
 
     # append executable to CMakeLists.txt file
     cmake_file_path = os.path.join(cwd, bucket_name, "CMakeLists.txt")
