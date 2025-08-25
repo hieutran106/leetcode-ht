@@ -1,3 +1,6 @@
 
 add_executable(_1504_count_submatrices_with_all_ones _1504_count_submatrices_with_all_ones.cpp)
 target_link_libraries(_1504_count_submatrices_with_all_ones PRIVATE Catch2::Catch2WithMain)
+
+add_executable(_1493_longest_subarray_of_one _1493_longest_subarray_of_one.cpp)
+target_link_libraries(_1493_longest_subarray_of_one PRIVATE Catch2::Catch2WithMain)

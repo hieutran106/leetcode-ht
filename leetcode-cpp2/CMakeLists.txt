@@ -17,6 +17,7 @@ FetchContent_MakeAvailable(catch2)
 # Pull in Catch2's CTest integration helper
 #include(Catch)
 add_subdirectory(playground)
+add_subdirectory(utils)
 add_subdirectory(_0xx)
 add_subdirectory(_2xx)
 add_subdirectory(_22xx)
