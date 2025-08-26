@@ -1,3 +1,6 @@
 
 add_executable(_1081_smallest_subsequence_distinct_char _1081_smallest_subsequence_distinct_char.cpp)
 target_link_libraries(_1081_smallest_subsequence_distinct_char PRIVATE Catch2::Catch2WithMain)
+
+add_executable(_1004_max_consecutive_one _1004_max_consecutive_one.cpp)
+target_link_libraries(_1004_max_consecutive_one PRIVATE Catch2::Catch2WithMain)

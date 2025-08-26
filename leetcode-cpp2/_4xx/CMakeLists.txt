@@ -1,0 +1,3 @@
+
+add_executable(_485_max_consecutive_ones _485_max_consecutive_ones.cpp)
+target_link_libraries(_485_max_consecutive_ones PRIVATE Catch2::Catch2WithMain)
