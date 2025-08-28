@@ -1,3 +1,6 @@
 
 add_executable(_3195_find_min_area_cover_all_ones _3195_find_min_area_cover_all_ones.cpp)
 target_link_libraries(_3195_find_min_area_cover_all_ones PRIVATE Catch2::Catch2WithMain)
+
+add_executable(_3000_max_area_of_logest_diagonal_rect _3000_max_area_of_logest_diagonal_rect.cpp)
+target_link_libraries(_3000_max_area_of_logest_diagonal_rect PRIVATE Catch2::Catch2WithMain)

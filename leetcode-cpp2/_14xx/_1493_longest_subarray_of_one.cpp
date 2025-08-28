@@ -1,5 +1,6 @@
 
 #include <catch2/catch_test_macros.hpp>
+#include "../utils/serde.cpp"
 
 // Date: 2025-08-25
 // Problem: 1493 longest_subarray_of_one
