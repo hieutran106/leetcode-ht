@@ -1,0 +1,3 @@
+
+add_executable(_1673_find_the_most_competitive_subsequence _1673_find_the_most_competitive_subsequence.cpp)
+target_link_libraries(_1673_find_the_most_competitive_subsequence PRIVATE Catch2::Catch2WithMain)
