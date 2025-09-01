@@ -55,6 +55,26 @@ vector<int> parseVector(const std::string& s) {
 
 }
 
+void printVec(const vector<int>& v) {
+    std::cout << '[';
+    for (size_t i = 0; i < v.size(); ++i) {
+        std::cout << v[i];
+        if (i + 1 < v.size()) std::cout << ", ";
+    }
+    std::cout << "]\n";
+}
+
+std::string formatVec(const vector<int>& v) {
+    std::string out;
+    out.push_back('[');
+    for (size_t i = 0; i < v.size(); ++i) {
+        if (i > 0) out += ", ";
+        out += std::to_string(v[i]);
+    }
+    out.push_back(']');
+    return out;
+
+}
 
 TEST_CASE("test parseMatrix", "") {
     std::string input = "[[1,2,3],[4,5,6],[7,8,9]]";

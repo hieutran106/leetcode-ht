@@ -1,3 +1,6 @@
 
 add_executable(_485_max_consecutive_ones _485_max_consecutive_ones.cpp)
 target_link_libraries(_485_max_consecutive_ones PRIVATE Catch2::Catch2WithMain)
+
+add_executable(_402_remove_k_digits _402_remove_k_digits.cpp)
+target_link_libraries(_402_remove_k_digits PRIVATE Catch2::Catch2WithMain)
