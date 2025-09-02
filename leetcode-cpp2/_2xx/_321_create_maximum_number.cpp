@@ -21,20 +21,7 @@ public:
             string log = std::format("n1={}, n2={}, c={}", formatVec(n1), formatVec(n2), formatVec(c));
             std::cout << log << std::endl;
             printVec(c);
-
-            bool greater = false;
-            for (size_t j = 0; j < k; j++) {
-                if (c[j] == ans[j]) {
-                    continue;
-                } else if (c[j] > ans[j]) {
-                    greater = true;
-                    break;
-                } else {
-                    greater = false;
-                    break;
-                }
-            }
-            if (greater) {
+            if (isGreater(c, ans, 0, 0)) {
                 ans = c;
             }
         }
@@ -63,7 +50,16 @@ public:
         vector<int> ans;
         size_t i = 0, j = 0;
         while (i < nums1.size() && j < nums2.size()) {
-            if (nums1[i] >= nums2[j]) {
+            if (nums1[i] == nums2[j]) {
+                if (isGreater(nums1, nums2, i+1, j +1 )) {
+                    ans.push_back(nums1[i]);
+                    i++;
+                } else {
+                    ans.push_back(nums2[j]);
+                    j++;
+                }
+            } else
+            if (nums1[i] > nums2[j]) {
                 ans.push_back(nums1[i]);
                 i++;
             } else {
@@ -82,6 +78,21 @@ public:
         }
         return ans;
     }
+
+    bool isGreater(vector<int>& nums1, vector<int>& nums2, int i, int j) {
+        int n = static_cast<int>(nums1.size());
+        int m = static_cast<int>(nums2.size());
+        while (i < n && j < m && nums1[i] == nums2[j]) {
+            i++;
+            j++;
+        }
+        if (j == m) return true;   // nums2 exhausted => nums1 is greater or equal
+        if (i == n) return false;  // nums1 exhausted while nums2 remains
+        return nums1[i] > nums2[j];
+
+
+    }
+
 };
 
 Solution s;
@@ -164,6 +175,18 @@ TEST_CASE("[321] Test case 10", "") {
     auto nums2 = parseVector("4,6,5");
     auto actual = s.merge(nums1, nums2);
     auto expect = parseVector("4,6,5,4");
+    REQUIRE(actual == expect);
+}
+
+TEST_CASE("[321] Test case 11", "") {
+    auto nums1 = parseVector("2,2");
+    auto nums2 = parseVector("2,3");
+    auto actual = s.merge(nums1, nums2);
+    auto expect = parseVector("2,3,2,2");
+
+    vector<int> x= {6, 5};
+    vector<int> y = {6};
+
     REQUIRE(actual == expect);
 }
 

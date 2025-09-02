@@ -14,6 +14,9 @@ solution_template = """
 
 // Date: {current_date}
 // Problem: {problem_number} {problem_name}
+using std::vector;
+using std::string;
+
 class Solution {
 
 };

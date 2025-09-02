@@ -1,3 +1,6 @@
 
 add_executable(_1673_find_the_most_competitive_subsequence _1673_find_the_most_competitive_subsequence.cpp)
 target_link_libraries(_1673_find_the_most_competitive_subsequence PRIVATE Catch2::Catch2WithMain)
+
+add_executable(_1792_max_average_pass_ratio _1792_max_average_pass_ratio.cpp)
+target_link_libraries(_1792_max_average_pass_ratio PRIVATE Catch2::Catch2WithMain)
