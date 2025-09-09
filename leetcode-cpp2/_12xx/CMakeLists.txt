@@ -4,3 +4,6 @@ target_link_libraries(_1323_max_69_number PRIVATE Catch2::Catch2WithMain)
 
 add_executable(_1277_count_square_submatrices_with_all_ones _1277_count_square_submatrices_with_all_ones.cpp)
 target_link_libraries(_1277_count_square_submatrices_with_all_ones PRIVATE Catch2::Catch2WithMain)
+
+add_executable(_1304_find_n_unique_int_sum_to_zero _1304_find_n_unique_int_sum_to_zero.cpp)
+target_link_libraries(_1304_find_n_unique_int_sum_to_zero PRIVATE Catch2::Catch2WithMain)

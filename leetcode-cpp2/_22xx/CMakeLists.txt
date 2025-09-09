@@ -1,3 +1,6 @@
 
 add_executable(_2264_largest_3_same_digit_in_string _2264_largest_3_same_digit_in_string.cpp)
 target_link_libraries(_2264_largest_3_same_digit_in_string PRIVATE Catch2::Catch2WithMain)
+
+add_executable(_2327_number_people_aware_secret _2327_number_people_aware_secret.cpp)
+target_compile_options(playground PRIVATE -fsanitize=address)
