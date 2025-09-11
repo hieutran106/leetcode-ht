@@ -1,0 +1,3 @@
+
+add_executable(_2785_sort_vowels_in_str _2785_sort_vowels_in_str.cpp)
+target_link_libraries(_2785_sort_vowels_in_str PRIVATE Catch2::Catch2WithMain)

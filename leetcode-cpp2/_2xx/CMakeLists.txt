@@ -6,3 +6,6 @@ target_link_libraries(_342_power_of_four PRIVATE Catch2::Catch2WithMain)
 
 add_executable(_321_create_maximum_number _321_create_maximum_number.cpp)
 target_link_libraries(_321_create_maximum_number PRIVATE Catch2::Catch2WithMain)
+
+add_executable(_345_reverse_vowels_of_str _345_reverse_vowels_of_str.cpp)
+target_link_libraries(_345_reverse_vowels_of_str PRIVATE Catch2::Catch2WithMain)
