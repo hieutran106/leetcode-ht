@@ -95,7 +95,8 @@ if __name__ == "__main__":
         lines = root_cmake_list.readlines()
 
     add_subdirectory_str = f"add_subdirectory({bucket_name})"
-    found = add_subdirectory_str in lines
+    # Must check the string with newline char at the end
+    found = f"{add_subdirectory_str}\n" in lines
     if not found:
         with open("CMakeLists.txt", "r+") as root_cmake_list:
             content = root_cmake_list.read()
