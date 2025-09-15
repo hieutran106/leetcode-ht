@@ -30,10 +30,13 @@ public:
     }
 };
 
+constexpr int five() {
+    return 5;
+}
 
 int main() {
-    Foo f{2, "Test"};
-
+    constexpr int t {five()};
+    std::cout << t << std::endl;
     return 0;
 
 }

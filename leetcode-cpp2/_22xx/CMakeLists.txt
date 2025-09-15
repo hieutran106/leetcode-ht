@@ -4,3 +4,5 @@ target_link_libraries(_2264_largest_3_same_digit_in_string PRIVATE Catch2::Catch
 
 add_executable(_2327_number_people_aware_secret _2327_number_people_aware_secret.cpp)
 target_compile_options(playground PRIVATE -fsanitize=address)
+add_executable(_2351_first_letter_appear_twice _2351_first_letter_appear_twice.cpp)
+target_link_libraries(_2351_first_letter_appear_twice PRIVATE Catch2::Catch2WithMain)

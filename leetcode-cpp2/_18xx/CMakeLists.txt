@@ -1,0 +1,3 @@
+
+add_executable(_1935_max_number_words_you_can_type _1935_max_number_words_you_can_type.cpp)
+target_link_libraries(_1935_max_number_words_you_can_type PRIVATE Catch2::Catch2WithMain)
