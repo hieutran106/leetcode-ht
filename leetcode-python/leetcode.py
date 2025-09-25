@@ -75,7 +75,7 @@ if __name__ == "__main__":
     # create solution file
     with open(solution_file_path, 'w+') as f:
         current_date = datetime.now()
-        formatted_date = current_date.strftime("%Y-%d-%m")
+        formatted_date = current_date.strftime("%Y-%m-%d")
         data = {
             "current_date": formatted_date,
             "problem_number": number,
