@@ -1,3 +1,6 @@
 
 add_executable(_3227_vowels_game_in_str _3227_vowels_game_in_str.cpp)
 target_link_libraries(_3227_vowels_game_in_str PRIVATE Catch2::Catch2WithMain)
+
+add_executable(_3370_smallest_number_with_set_bits _3370_smallest_number_with_set_bits.cpp)
+target_link_libraries(_3370_smallest_number_with_set_bits PRIVATE Catch2::Catch2WithMain)
