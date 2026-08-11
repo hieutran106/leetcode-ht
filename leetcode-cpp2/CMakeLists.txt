@@ -8,27 +8,24 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 include(FetchContent)
 FetchContent_Declare(
-        catch2
+        Catch2
         GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-        GIT_TAG v3.4.0
+        GIT_TAG v3.15.3
 )
-FetchContent_MakeAvailable(catch2)
+FetchContent_MakeAvailable(Catch2)
 
-# Pull in Catch2's CTest integration helper
-#include(Catch)
-add_subdirectory(playground)
-add_subdirectory(utils)
-add_subdirectory(_0xx)
-add_subdirectory(_2xx)
-add_subdirectory(_22xx)
-add_subdirectory(_10xx)
-add_subdirectory(_12xx)
-add_subdirectory(_14xx)
-add_subdirectory(_30xx)
-add_subdirectory(_4xx)
-add_subdirectory(_16xx)
-add_subdirectory(_26xx)
-add_subdirectory(_32xx)
-add_subdirectory(_18xx)
-add_subdirectory(_8xx)
-add_subdirectory(_20xx)
+include(CTest)
+include(Catch)
+
+# Utils library (shared across all targets)
+add_library(utils STATIC utils/serde.cpp)
+target_include_directories(utils PUBLIC ${CMAKE_SOURCE_DIR}/utils)
+
+# Create a separate target for each .cpp file in _* folders
+file(GLOB_RECURSE TEST_SOURCES CONFIGURE_DEPENDS "${CMAKE_SOURCE_DIR}/_*/*.cpp")
+foreach(SOURCE_FILE ${TEST_SOURCES})
+    get_filename_component(TARGET_NAME ${SOURCE_FILE} NAME_WE)
+    add_executable(${TARGET_NAME} ${SOURCE_FILE})
+    target_link_libraries(${TARGET_NAME} PRIVATE Catch2::Catch2WithMain utils)
+    catch_discover_tests(${TARGET_NAME})
+endforeach()

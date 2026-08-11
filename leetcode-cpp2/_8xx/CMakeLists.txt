@@ -1,3 +1,0 @@
-
-add_executable(_812_largest_triangle_area _812_largest_triangle_area.cpp)
-target_link_libraries(_812_largest_triangle_area PRIVATE Catch2::Catch2WithMain)

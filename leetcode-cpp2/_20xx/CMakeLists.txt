@@ -1,3 +1,0 @@
-
-add_executable(_2125_number_laser_beam _2125_number_laser_beam.cpp)
-target_link_libraries(_2125_number_laser_beam PRIVATE Catch2::Catch2WithMain)
