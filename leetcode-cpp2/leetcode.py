@@ -82,27 +82,3 @@ if __name__ == "__main__":
         }
         content = render(solution_template, data)
         f.writelines(content)
-
-    # append executable to CMakeLists.txt file
-    cmake_file_path = os.path.join(cwd, bucket_name, "CMakeLists.txt")
-    with open(cmake_file_path, "a") as file:
-        file.write("\n")
-        file.write(f"add_executable({problem_name} {problem_name}.cpp)\n")
-        file.write(f"target_link_libraries({problem_name} PRIVATE Catch2::Catch2WithMain)\n")
-
-    # check if root-level CMakeLists.txt includes proper add_subdirectory
-    with open("CMakeLists.txt", "r") as root_cmake_list:
-        lines = root_cmake_list.readlines()
-
-    add_subdirectory_str = f"add_subdirectory({bucket_name})"
-    # Must check the string with newline char at the end
-    found = f"{add_subdirectory_str}\n" in lines
-    if not found:
-        with open("CMakeLists.txt", "r+") as root_cmake_list:
-            content = root_cmake_list.read()
-            if not content.endswith("\n"):
-                root_cmake_list.write("\n")
-            root_cmake_list.write(f"{add_subdirectory_str}\n")
-        print(f"{add_subdirectory_str} was not found in the root CMakeLists.txt and has been appended to the file")
-    else:
-        print(f"{add_subdirectory_str} already exists in the root CMakeLists.txt file")
