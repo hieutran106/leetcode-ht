@@ -29,3 +29,5 @@ foreach(SOURCE_FILE ${TEST_SOURCES})
     target_link_libraries(${TARGET_NAME} PRIVATE Catch2::Catch2WithMain utils)
     catch_discover_tests(${TARGET_NAME})
 endforeach()
+# create target for playground
+add_executable(playground playground/playground.cpp)
